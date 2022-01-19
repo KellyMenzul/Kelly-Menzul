@@ -5,7 +5,9 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <div>
-      <p>Hi There</p>
+      <p
+      rel="preload"
+      >Hi There</p>
 
     </div>
   )

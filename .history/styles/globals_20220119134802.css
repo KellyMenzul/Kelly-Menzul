@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "headings";
-  src: url(../public/fonts/GishellaMorely/Gishella\ Morely.ttf);
+  src: url(../public/fonts/GishellaMorely/);
   font-display: swap;
 }
 
@@ -20,9 +20,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "textlight";
 }
 
+p {
+  font-family: "textlight";
+}
 
 a {
   color: inherit;

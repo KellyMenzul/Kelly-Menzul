@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "textbold";
+  src: url(/fonts/NeueHassUnica/NeueHaasUnica-Bold.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "textlight";
+  src: url(/fonts/NeueHassUnica/NeueHaasUnica-ExtraLight.ttf);
+  font-display: swap;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-family: "textbold";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+

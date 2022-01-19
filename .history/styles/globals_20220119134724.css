@@ -10,19 +10,15 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "headings";
-  src: url(../public/fonts/GishellaMorely/Gishella\ Morely.ttf);
-  font-display: swap;
-}
-
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "textlight";
 }
 
+p {
+  font-family: "textbold";
+}
 
 a {
   color: inherit;

@@ -20,9 +20,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "textlight";
 }
 
+p {
+  font-family: "textlight";
+}
 
 a {
   color: inherit;
