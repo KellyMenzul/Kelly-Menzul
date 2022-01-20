@@ -7,7 +7,6 @@ import Intro from '../comps/Intro'
 import Head from '../comps/Head'
 import Work from '../comps/Work'
 import { useState, useEffect } from "react";
-import Load from '../comps/Load'
 
 
 const Holder = styled.div`
@@ -107,12 +106,22 @@ export default function Home() {
   if (setup1 === false) {
     setTimeout(() => {
       setSetup1(true)
-    },5000)
+    },3000)
 
-    return <div>
-      <Load/>
-    </div>
+    return <motion.div
+    className={styles.profileloading}
+    initial="pageInitial" transition={{delay:2.5}} animate="pageAnimate" variants={{
+      pageAnimate: {
+        opacity:0,
+      },
+    }}
+    >
+      <Login/>
+    </motion.div>
   }
+
+  
+
 
   return (
     <Holder>

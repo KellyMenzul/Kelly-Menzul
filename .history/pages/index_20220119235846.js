@@ -107,12 +107,22 @@ export default function Home() {
   if (setup1 === false) {
     setTimeout(() => {
       setSetup1(true)
-    },5000)
+    },3000)
 
-    return <div>
+    return <motion.div
+    className={styles.profileloading}
+    initial="pageInitial" transition={{delay:2.5}} animate="pageAnimate" variants={{
+      pageAnimate: {
+        opacity:0,
+      },
+    }}
+    >
       <Load/>
-    </div>
+    </motion.div>
   }
+
+  
+
 
   return (
     <Holder>

@@ -107,7 +107,7 @@ export default function Home() {
   if (setup1 === false) {
     setTimeout(() => {
       setSetup1(true)
-    },5000)
+    },3000)
 
     return <div>
       <Load/>

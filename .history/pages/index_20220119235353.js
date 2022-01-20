@@ -6,8 +6,7 @@ import Position from '../comps/Position'
 import Intro from '../comps/Intro'
 import Head from '../comps/Head'
 import Work from '../comps/Work'
-import { useState, useEffect } from "react";
-import Load from '../comps/Load'
+
 
 
 const Holder = styled.div`
@@ -104,15 +103,6 @@ justify-content:center;
 export default function Home() {
   const [setup1, setSetup1] =  useState(false)
 
-  if (setup1 === false) {
-    setTimeout(() => {
-      setSetup1(true)
-    },5000)
-
-    return <div>
-      <Load/>
-    </div>
-  }
 
   return (
     <Holder>

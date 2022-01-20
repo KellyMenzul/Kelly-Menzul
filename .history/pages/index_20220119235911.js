@@ -107,12 +107,15 @@ export default function Home() {
   if (setup1 === false) {
     setTimeout(() => {
       setSetup1(true)
-    },5000)
+    },3000)
 
-    return <div>
+    return <motion.div>
       <Load/>
-    </div>
+    </motion.div>
   }
+
+  
+
 
   return (
     <Holder>
