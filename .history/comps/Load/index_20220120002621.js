@@ -23,7 +23,7 @@ const Load = ({}) => {
             animationData: require('../../public/load.json')
             
         })
-        lottie.setSpeed(0.3);
+        lottie.setSpeed(0.2);
         setTimeout(() => {
             anim.pause()
         }, 61000);
