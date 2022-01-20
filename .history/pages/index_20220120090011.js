@@ -99,15 +99,7 @@ align-items:center;
 justify-content:center;
 `
 
-const LoadHolder = styled.div`
-display:flex;
-flex-direction:column;
-width:100%;
-height:100vh;
-justify-content:center;
-align-items:center;
-`
-const TextHolder  =styled.div``
+
 
 export default function Home() {
   const [setup1, setSetup1] =  useState(false)
@@ -115,12 +107,11 @@ export default function Home() {
   if (setup1 === false) {
     setTimeout(() => {
       setSetup1(true)
-    },9000)
+    },6000)
 
-    return <LoadHolder>
+    return <div>
       <Load/>
-      <TextHolder>Welcome</TextHolder>
-    </LoadHolder>
+    </div>
   }
 
   return (

@@ -101,11 +101,11 @@ justify-content:center;
 
 const LoadHolder = styled.div`
 display:flex;
-flex-direction:column;
+
 width:100%;
 height:100vh;
 justify-content:center;
-align-items:center;
+justify-content:center;
 `
 const TextHolder  =styled.div``
 
