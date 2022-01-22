@@ -7,13 +7,33 @@ import Intro from '../comps/Intro'
 import Head from '../comps/Head'
 import Work from '../comps/Work'
 import Link from 'next/link'
+import Load2 from '../comps/Load2'
+import { useState } from 'react'
 
 
+const LoadHolder = styled.div`
+display:flex;
+width:100%;
+height:100vh;
+justify-content:center;
+align-items:center;
+`
 
 
 
 
 export default function Design() {
+  const [setup1, setSetup1] =  useState(false)
+
+  if (setup1 === false) {
+    setTimeout(() => {
+      setSetup1(true)
+    },3000)
+
+    return <LoadHolder>
+      <Load2/>
+    </LoadHolder>
+  }
 
   return (
       <div>
