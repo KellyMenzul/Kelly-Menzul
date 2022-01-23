@@ -80,7 +80,7 @@ width:100%;
 
 const ImageTwo = styled.img`
 object-fit:cover;
-width:70%;
+width:50%;
 transition:2s;
 
 &:hover {

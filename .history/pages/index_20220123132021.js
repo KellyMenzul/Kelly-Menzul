@@ -273,7 +273,7 @@ export default function Home() {
             </FullHeadHolder>  
               <Position fontsize='20px' text='My name is Kelly and I am a front-end developer and UX/UI Designer! I like to create online platforms and easy to use interface designs. My passion started when I took a digital media class in high school, where I developed an interest in development and design which has lead me to where I am today.'/>
               <Position fontsize='20px' text='I graduated from the Digital Design and Development program at British Columbia Institute of Technology and have spent a large portion of my time working on projects and collaborating with various individuals and teams. My main priorities include building dynamic interactive cross platforms that are accessible for users.'/>
-              <Position fontsize='20px' text='Outside of web development I enjoy working on graphic design projects as well. I have collaborated with small businesses and created design brands and business cards for my past time. Outside of the tech world I enjoy hiking and snowboarding. One of my biggest interests are fashion and I spend a lot of time online shopping!'/>
+              <Position fontsize='20px' text='Other than web development I enjoy working on graphic design projects as well. I have collaborated with small businesses and created design brands and business cards for my past time. Outside of the tech world I enjoy hiking and snowboarding. One of my biggest interests are fashion and spend a lot of time online shopping!'/>
             </AboutMeHolder>
         </AboutHolderRight>
       </AboutHolder>
