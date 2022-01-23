@@ -1,0 +1,12 @@
+import styled from "styled-components";
+import React from "react";
+
+// margin-top:-160px;
+const ProjectDeliverable = ({
+}) => {
+    return <div>
+        deliverable
+    </div>
+}
+
+export default Role;
