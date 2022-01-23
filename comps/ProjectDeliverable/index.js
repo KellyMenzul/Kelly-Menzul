@@ -51,6 +51,7 @@ width:100%;
     align-items:center;
     justify-content:center;
     gap:10%;
+    margin-bottom:100px;
 }
 `
 
@@ -91,7 +92,7 @@ font-family:textlighttwo;
 `
 
 const BodyText = styled.p `
-
+line-height:25px;
 @media only screen and (max-width: 1500px) {
     text-align:center;
     width:200px;
@@ -100,13 +101,16 @@ const BodyText = styled.p `
 
 // margin-top:-160px;
 const ProjectDeliverable = ({
+    projecttext="Founded in 1988, the Tiny Paws is the longest-standing animal welfare organization in Vancouver and the region that rescues, rehabilitates and rehomes the largest number and species of animals in Vancouver.",
+    delivetext="Wordpress, Figma, UX/UI",
+    teamtext="Kelly Menzul, Daswon Gosse, Joyce Chan"
 }) => {
     return <Container>
 
         <HolderLeft>
             <ProjectHolder>
                 <ProjectHeader>PROJECT</ProjectHeader>
-                <ProjectText>Founded in 1988, the Tiny Paws is the longest-standing animal welfare organization in Vancouver and the region that rescues, rehabilitates and rehomes the largest number and species of animals in Vancouver.</ProjectText>
+                <ProjectText>{projecttext}</ProjectText>
             </ProjectHolder>
         </HolderLeft>
 
@@ -114,11 +118,11 @@ const ProjectDeliverable = ({
             <InfoHolder>
                 <Deliverable>
                     <HeadingText>DELIVERABLES</HeadingText>
-                    <BodyText>Wordpress, Figma, UX/UI</BodyText>
+                    <BodyText>{delivetext}</BodyText>
                 </Deliverable>
                 <Team>
                     <HeadingText>TEAM</HeadingText>
-                    <BodyText>Kelly Menzul, Daswon Gosse, Joyce Chan</BodyText>
+                    <BodyText>{teamtext}</BodyText>
                 </Team>
             </InfoHolder>
         </HolderRight>

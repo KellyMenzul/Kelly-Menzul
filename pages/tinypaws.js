@@ -158,7 +158,7 @@ export default function Tinypaws() {
         </Headholder>
 
         <ButtonHolder2>
-          <RegularButton link='../' buttontext='Go Back'/>
+          <RegularButton link='../#work' buttontext='Go Back'/>
           <RegularButton link='http://www.kellymenzul.ca/Tinypaws' buttontext='Visit Tinypaws'/>
         </ButtonHolder2>
 
@@ -195,7 +195,7 @@ export default function Tinypaws() {
         </ThankHolder>
 
         <ButtonHolder>
-          <RegularButton link='../' buttontext='Go Back'/>
+          <RegularButton link='../#work' buttontext='Go Back'/>
           <RegularButton link='http://www.kellymenzul.ca/Tinypaws' buttontext='Visit Tinypaws'/>
         </ButtonHolder>
 

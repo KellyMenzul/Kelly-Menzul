@@ -283,11 +283,11 @@ export default function Home() {
 
       <WorkHolder id='work'>
       <ContainerLeft>
-            <Screens name='Mindful'/>
+            <Screens linkhref='/mindful' name='Mindful'/>
             <Screens linkhref='/tinypaws' src='tinypawsscreen.png' name='Tinypaws' />
           </ContainerLeft>
           <ContainerRight>
-            <Screens name='Wecycle' src='wecyclescreen.png'/>
+            <Screens linkhref='/wecycle' name='Wecycle' src='wecyclescreen.png'/>
             <Screens src='frankoceanscreen.png' name='Frank Ocean'/>
           </ContainerRight>
       </WorkHolder>
