@@ -52,9 +52,6 @@ padding:12px;
 &:hover {
     text-decoration:underline;
 }
-@media only screen and (max-width: 1500px) {
-    font-size:16px;
-}
 `
 
 const Logo = styled.p`

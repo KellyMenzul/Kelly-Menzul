@@ -15,12 +15,21 @@ margin-top:-160px;
 line-height:30px;
 
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (min-width:415px) and (max-width: 1500px) {
     margin-top:-80px;
     text-align:center;
     line-height:50px;
-    font-size:30px;
-    
+    font-size:40px;
+}
+
+@media only screen and (max-width: 414px) {
+    font-size:80px;
+    text-align:center;
+    line-height:80px;
+}
+
+@media only screen and (max-width: 1500px) {
+    align-items:center;
 }
 `
 // margin-top:-160px;

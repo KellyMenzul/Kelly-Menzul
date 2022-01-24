@@ -222,24 +222,14 @@ margin-bottom:80px;
 margin-top:100px;
 padding-top:100px;
 `
-const ContainerHolder = styled.div`
+const ContainerHolder = styled.div``
+
+const WorkHolder = styled.div `
 display:flex;
 flex-direction:row;
 width:100%;
 height:100vh;
 margin-bottom:200px;
-
-@media only screen and (max-width: 1500px) {
-    flex-direction:column;
-}
-`
-
-const WorkHolder = styled.div `
-display:flex;
-flex-direction:column;
-align-items:center;
-width:100%;
-height:100%;
 
 @media only screen and (max-width: 1500px) {
     flex-direction:column;
@@ -258,16 +248,14 @@ export default function Home() {
   useEffect(()=> {
     if(inView){
       animation.start({
-        y:0,
         opacity:1,
         transition: {
-          duration:0.5,
-          delay:0.8
+          duration:3
         }
       });
     }
     if(!inView){
-      animation.start({opacity:0, y:50})
+      animation.start({opacity:0,})
     }
     console.log("use effect hook, inView = ", inView);
   }, [inView]);
@@ -276,15 +264,13 @@ export default function Home() {
     if(inView2){
       animation2.start({
         opacity:1,
-        y:0,
         transition: {
-          duration:0.5,
-          delay:0.8
+          duration:3
         }
       });
     }
     if(!inView2){
-      animation2.start({opacity:0, y:50})
+      animation2.start({opacity:0,})
     }
     console.log("use effect hook, inView2 = ", inView2);
   }, [inView2]);
@@ -302,23 +288,23 @@ export default function Home() {
        id='landing'
        >
         <LoadHolder as={motion.div}
-          animate={animation}
-          initial="hidden" animate="visible" variants={{
-          hidden: {
-            opacity:0,
-            x:90,
+        animate={animation}
+        initial="hidden" animate="visible" variants={{
+        hidden: {
+          opacity:0,
+          x:90,
 
-          },
-          visible: {
-            opacity: 1,
-            x:0,
+        },
+        visible: {
+          opacity: 1,
+          x:0,
 
-            transition: {
-              delay:.10,
-              duration:2
-            }
+          transition: {
+            delay:.10,
+            duration:2
           }
-        }}
+        }
+      }}
         >
           <Load/>
         </LoadHolder>
@@ -329,10 +315,12 @@ export default function Home() {
             hidden: {
               opacity:0,
               x:-90,
+
             },
             visible: {
               opacity: 1,
               x:0,
+
               transition: {
                 delay:.10,
                 duration:2

@@ -276,7 +276,6 @@ export default function Home() {
     if(inView2){
       animation2.start({
         opacity:1,
-        y:0,
         transition: {
           duration:0.5,
           delay:0.8
@@ -370,7 +369,24 @@ export default function Home() {
       </LandingHolder>
 
       <AboutHolder as={motion.div} ref={ref} animate={animation} id='about'>
-        <HeadHolder>
+        <HeadHolder as={motion.div}
+        animate={animation}
+        initial="hidden" animate="visible" variants={{
+        hidden: {
+          opacity:0,
+          x:90,
+
+        },
+        visible: {
+          opacity: 1,
+          x:0,
+
+          transition: {
+            delay:.10,
+            duration:2
+          }
+        }
+      }}>
           <Head text='Hi there!'/>
         </HeadHolder>
         <AboutHolderLeft>

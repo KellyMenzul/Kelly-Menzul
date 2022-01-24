@@ -136,6 +136,18 @@ width:70%;
 
 // work
 
+const WorkHolder = styled.div `
+display:flex;
+flex-direction:row;
+width:100%;
+height:100vh;
+margin-bottom:200px;
+
+@media only screen and (max-width: 1500px) {
+    flex-direction:column;
+}
+
+`
 const  WorkHolderLeft = styled.div`
 display:flex;
 align-items:center;
@@ -222,72 +234,42 @@ margin-bottom:80px;
 margin-top:100px;
 padding-top:100px;
 `
-const ContainerHolder = styled.div`
-display:flex;
-flex-direction:row;
-width:100%;
-height:100vh;
-margin-bottom:200px;
-
-@media only screen and (max-width: 1500px) {
-    flex-direction:column;
-}
-`
-
-const WorkHolder = styled.div `
-display:flex;
-flex-direction:column;
-align-items:center;
-width:100%;
-height:100%;
-
-@media only screen and (max-width: 1500px) {
-    flex-direction:column;
-}
-
-`
 
 export default function Home() {
   const [ref, inView] = useInView();
   const [ref2, inView2] = useInView();
 
   const animation = useAnimation();
-  const animation2 = useAnimation();
   
-
   useEffect(()=> {
-    if(inView){
+    if(inView2){
       animation.start({
-        y:0,
         opacity:1,
         transition: {
-          duration:0.5,
-          delay:0.8
+          duration:3
         }
       });
     }
-    if(!inView){
-      animation.start({opacity:0, y:50})
+    if(!inView2){
+      animation.start({opacity:0,})
     }
     console.log("use effect hook, inView = ", inView);
   }, [inView]);
 
   useEffect(()=> {
-    if(inView2){
-      animation2.start({
+    if(inView){
+      animation.start({
         opacity:1,
-        y:0,
         transition: {
-          duration:0.5,
-          delay:0.8
+          duration:3
         }
       });
     }
-    if(!inView2){
-      animation2.start({opacity:0, y:50})
+    if(!inView){
+      animation.start({opacity:0,})
     }
-    console.log("use effect hook, inView2 = ", inView2);
-  }, [inView2]);
+    console.log("use effect hook, inView = ", inView);
+  }, [inView]);
 
 
 
@@ -302,23 +284,23 @@ export default function Home() {
        id='landing'
        >
         <LoadHolder as={motion.div}
-          animate={animation}
-          initial="hidden" animate="visible" variants={{
-          hidden: {
-            opacity:0,
-            x:90,
+        animate={animation}
+        initial="hidden" animate="visible" variants={{
+        hidden: {
+          opacity:0,
+          x:90,
 
-          },
-          visible: {
-            opacity: 1,
-            x:0,
+        },
+        visible: {
+          opacity: 1,
+          x:0,
 
-            transition: {
-              delay:.10,
-              duration:2
-            }
+          transition: {
+            delay:.10,
+            duration:2
           }
-        }}
+        }
+      }}
         >
           <Load/>
         </LoadHolder>
@@ -329,10 +311,12 @@ export default function Home() {
             hidden: {
               opacity:0,
               x:-90,
+
             },
             visible: {
               opacity: 1,
               x:0,
+
               transition: {
                 delay:.10,
                 duration:2
@@ -388,12 +372,11 @@ export default function Home() {
         </AboutHolderRight>
       </AboutHolder>
 
-      
-      <WorkHolder as={motion.div} ref={ref2} animate={animation2}>
       <AppHolder id="work">
         <Head text='Here is some of my work!'/>
       </AppHolder>
-      <ContainerHolder>
+      
+      <WorkHolder>
       <ContainerLeft>
             <Screens info='Front-end Development | UX/UI Design' linkhref='/mindful' name='Mindful'/>
             <Screens info='Wordpress | UX/UI Design' linkhref='/tinypaws' src='tinypawsscreen.png' name='Tinypaws' />
@@ -402,8 +385,6 @@ export default function Home() {
             <Screens info='Front-end Development | UX/UI Design'  linkhref='/wecycle' name='Wecycle' src='wecyclescreen.png'/>
             <Screens info='Wordpress | UX/UI Design' linkhref='/frankocean' src='frankoceanscreen.png' name='Frank Ocean'/>
           </ContainerRight>
-
-          </ContainerHolder> 
       </WorkHolder>
 
       

@@ -276,7 +276,6 @@ export default function Home() {
     if(inView2){
       animation2.start({
         opacity:1,
-        y:0,
         transition: {
           duration:0.5,
           delay:0.8
@@ -302,23 +301,23 @@ export default function Home() {
        id='landing'
        >
         <LoadHolder as={motion.div}
-          animate={animation}
-          initial="hidden" animate="visible" variants={{
-          hidden: {
-            opacity:0,
-            x:90,
+        animate={animation}
+        initial="hidden" animate="visible" variants={{
+        hidden: {
+          opacity:0,
+          x:90,
 
-          },
-          visible: {
-            opacity: 1,
-            x:0,
+        },
+        visible: {
+          opacity: 1,
+          x:0,
 
-            transition: {
-              delay:.10,
-              duration:2
-            }
+          transition: {
+            delay:.10,
+            duration:2
           }
-        }}
+        }
+      }}
         >
           <Load/>
         </LoadHolder>
@@ -329,10 +328,12 @@ export default function Home() {
             hidden: {
               opacity:0,
               x:-90,
+
             },
             visible: {
               opacity: 1,
               x:0,
+
               transition: {
                 delay:.10,
                 duration:2

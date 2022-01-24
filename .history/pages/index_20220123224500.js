@@ -276,7 +276,6 @@ export default function Home() {
     if(inView2){
       animation2.start({
         opacity:1,
-        y:0,
         transition: {
           duration:0.5,
           delay:0.8
@@ -333,6 +332,7 @@ export default function Home() {
             visible: {
               opacity: 1,
               x:0,
+
               transition: {
                 delay:.10,
                 duration:2

@@ -37,7 +37,7 @@ justify-content:flex-end;
 gap:30px;
 margin-right:50px;
 @media only screen and (max-width: 1500px) {
-    gap:10px;
+    font-size:16px;
 }
 `
 
@@ -52,6 +52,7 @@ padding:12px;
 &:hover {
     text-decoration:underline;
 }
+
 @media only screen and (max-width: 1500px) {
     font-size:16px;
 }
@@ -66,13 +67,13 @@ font-size:40px;
 `
 
 
-const MenuBar = ({
+const MenuBar2 = ({
     onButtonPress=()=>{},
     bgcolor="transparent",
 }) => { 
     return <Holder>
         <Left>
-            <Link href="#landing">
+            <Link href="../#landing">
             <LogoHolder>
                 <Logo>Logo</Logo>
             </LogoHolder>
@@ -80,11 +81,11 @@ const MenuBar = ({
         </Left>
         <Right>
             <MenuButtonHolder>
-                <Link href="#about">
+                <Link href="../#about">
                     <MenuButton bgcolor={bgcolor} onClick={()=>{onButtonPress()}}>About</MenuButton>
                 </Link>
 
-                <Link href="#work">
+                <Link href="../#work">
                 <MenuButton bgcolor={bgcolor}>Work</MenuButton>
                 </Link>
                 
@@ -99,4 +100,4 @@ const MenuBar = ({
     </Holder>
 }
 
-export default MenuBar;
+export default MenuBar2;

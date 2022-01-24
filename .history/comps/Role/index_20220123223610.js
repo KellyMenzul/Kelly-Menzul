@@ -19,7 +19,7 @@ line-height:30px;
     margin-top:-80px;
     text-align:center;
     line-height:50px;
-    font-size:30px;
+    font-size:40px;
     
 }
 `
