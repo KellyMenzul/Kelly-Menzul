@@ -8,7 +8,6 @@ import Load from '../comps/Load'
 import Role from '../comps/Role'
 import Screens from '../comps/Screens'
 import { style } from '@mui/system'
-import { useState } from 'react'
 
 
 const Holder = styled.div`
@@ -229,23 +228,22 @@ width:80%;
 align-items:center;
 justify-content:center;
 margin-bottom:80px;
-margin-top:100px;
-padding-top:100px;
+margin-top:250px;
 `
 
 export default function Home() {
-  const [setup1, setSetup1] =  useState(false)
+  // const [setup1, setSetup1] =  useState(false)
 
-  if (setup1 === false) {
-    setTimeout(() => {
-      setSetup1(true)
-    },5000)
+  // if (setup1 === false) {
+  //   setTimeout(() => {
+  //     setSetup1(true)
+  //   },5000)
 
-    return <LoadHolder>
-      <Load/>
-      <TextHolder>Welcome</TextHolder>
-    </LoadHolder>
-  }
+  //   return <LoadHolder>
+  //     <Load/>
+  //     <TextHolder>Welcome</TextHolder>
+  //   </LoadHolder>
+  // }
 
   return (
     <Holder>

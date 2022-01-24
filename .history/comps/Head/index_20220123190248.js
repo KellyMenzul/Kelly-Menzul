@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from "react";
-import { motion } from "framer-motion";
 
 const TextHolder = styled.div `
 dispay:flex;
@@ -19,7 +18,7 @@ font-weight:400;
 text-align:${props=>props.textalign};
 
 @media only screen and (max-width: 1500px) {
-  text-align:center;
+  display:block;
 }
 `
 

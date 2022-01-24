@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from "react";
-import { motion } from "framer-motion";
 
 const TextHolder = styled.div `
 dispay:flex;

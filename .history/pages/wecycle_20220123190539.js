@@ -5,8 +5,6 @@ import ProjectDeliverable from '../comps/ProjectDeliverable'
 import Process from '../comps/Proccess'
 import RegularButton from '../comps/RegularButton'
 import Link from 'next/link'
-import { useState } from 'react'
-import Load2 from '../comps/Load2'
 
 
 const Container = styled.div`

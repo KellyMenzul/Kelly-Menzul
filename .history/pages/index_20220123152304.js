@@ -8,13 +8,11 @@ import Load from '../comps/Load'
 import Role from '../comps/Role'
 import Screens from '../comps/Screens'
 import { style } from '@mui/system'
-import { useState } from 'react'
 
 
 const Holder = styled.div`
 display:flex;
 flex-direction:column;
-align-items:center;
 width:100%;
 height:100%;
 flex-wrap:wrap;
@@ -139,7 +137,6 @@ display:flex;
 flex-direction:row;
 width:100%;
 height:100vh;
-margin-bottom:200px;
 
 @media only screen and (max-width: 1500px) {
     flex-direction:column;
@@ -224,28 +221,22 @@ justify-content:center;
 `
 
 const AppHolder = styled.div`
-display:flex;
-width:80%;
-align-items:center;
-justify-content:center;
-margin-bottom:80px;
-margin-top:100px;
-padding-top:100px;
+
 `
 
 export default function Home() {
-  const [setup1, setSetup1] =  useState(false)
+  // const [setup1, setSetup1] =  useState(false)
 
-  if (setup1 === false) {
-    setTimeout(() => {
-      setSetup1(true)
-    },5000)
+  // if (setup1 === false) {
+  //   setTimeout(() => {
+  //     setSetup1(true)
+  //   },5000)
 
-    return <LoadHolder>
-      <Load/>
-      <TextHolder>Welcome</TextHolder>
-    </LoadHolder>
-  }
+  //   return <LoadHolder>
+  //     <Load/>
+  //     <TextHolder>Welcome</TextHolder>
+  //   </LoadHolder>
+  // }
 
   return (
     <Holder>
@@ -292,11 +283,11 @@ export default function Home() {
         </AboutHolderRight>
       </AboutHolder>
 
-      <AppHolder id="work">
-        <Head text='Here is some of my work!'/>
+      <AppHolder>
+        <Head/>
       </AppHolder>
       
-      <WorkHolder>
+      <WorkHolder id='work'>
       <ContainerLeft>
             <Screens info='Front-end Development | UX/UI Design' linkhref='/mindful' name='Mindful'/>
             <Screens info='Wordpress | UX/UI Design' linkhref='/tinypaws' src='tinypawsscreen.png' name='Tinypaws' />

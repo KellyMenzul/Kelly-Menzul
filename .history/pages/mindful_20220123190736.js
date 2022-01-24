@@ -5,8 +5,7 @@ import ProjectDeliverable from '../comps/ProjectDeliverable'
 import Process from '../comps/Proccess'
 import RegularButton from '../comps/RegularButton'
 import Link from 'next/link'
-import { useState } from 'react'
-import Load2 from '../comps/Load2'
+import { useState } from 'react'''
 
 
 const Container = styled.div`
@@ -49,7 +48,6 @@ align-items:center;
 justify-content:center;
 width:100%;
 height:40%;
-
 `
 
 const ImageHolderPer = styled.div`
@@ -82,14 +80,14 @@ width:100%;
 
 const ImageTwo = styled.img`
 object-fit:cover;
-width:70%;
+width:50%;
 transition:2s;
 
 &:hover {
-    width:70%;
-  }
+  width:70%;
+
+}
 @media only screen and (max-width: 1500px) {
-    
 }
 `
 
@@ -143,6 +141,7 @@ margin-bottom:50px;
 
 @media only screen and (max-width: 1500px) {
   height:100%;
+  flex-direction:column;
 }
 `
 
@@ -151,7 +150,7 @@ text-decoration:underline;
 `
 
 
-export default function Wecycle() {
+export default function MindfulApp() {
   const [setup1, setSetup1] =  useState(false)
 
   if (setup1 === false) {
@@ -170,41 +169,43 @@ export default function Wecycle() {
           <MenuBar2/>
         </MenuHolder>
         <Headholder>
-          <Head textalign='center' text='Wecycle'/>
+          <Head textalign='center' text='Mindful'/>
         </Headholder>
 
         <ButtonHolder2>
           <RegularButton link='../#work' buttontext='Go Back'/>
-          <RegularButton link='https://wecycle-apps.vercel.app/Home' buttontext='Visit Wecycle'/>
+          <RegularButton width='250px' link='http://www.kellymenzul.ca/Mindful/' buttontext='Learn about Mindful'/>
+          <RegularButton link='https://idsp3380-client.herokuapp.com/' buttontext='Visit Mindful'/>
         </ButtonHolder2>
 
         <ImageHolder>
-          <ImageOne src='/wecycle.png'/>
+          <ImageOne src='/mindfulmockup.png'/>
         </ImageHolder>
 
         <DeliverableHolder>
-          <ProjectDeliverable projecttext="Wecycle's mission is to educate their users about the importance of recycling. Wecycle wants to be the bridge between parents/teachers and children when it comes to an engaging and fun learning experience."
-          delivetext='Next.js, Storybook, Styled-Components'
-          teamtext='Kelly Menzul, Hannah Cabug, Hyerin Cheon, Leah Mah'
+          <ProjectDeliverable projecttext='Mindful is an application that acts as your mental health “companion”. It provides you with daily reminders to take a moment out of your day to self-reflect on your emotions. Invest in yourself and share your thoughts.'
+          delivetext='Next.js, Storybook, Axios, MUI, Lottie, Framer Motion, Styled-Components'
+          teamtext='Kelly Menzul, Hannah Cabug, Hannah MacPherson, Kailin Wei, Mai Toyoda, Hongsoon Kim'
           />
+          <Mindful href='http://www.kellymenzul.ca/Mindful/'>Learn more about the Mindful development process and team</Mindful>
         </DeliverableHolder>
 
         <ProcessHolder>
-          <Process text="Waste management is prevelant in today's world however, children have difficulties paying attention and retaining information in schools and at home."/>
+          <Process text='There is a negative stigma about mental health in today’s society. People from refrain from having an open discussion about their emotions with others.'/>
         </ProcessHolder>
 
         <ImageHolder>
-          <ImageTwo src='/wecyclepic.png'/>
+          <ImageTwo src='/mindful.png'/>
         </ImageHolder>
 
         <ProcessHolder>
-          <Process head='The Ideation' text='Create an interactive application with visuals and components that allows children to earn badges as they complete all three waste regions.'/>
+          <Process head='The Ideation' text='Mindful is focused on managing the user’s mental health which includes emotions and well-being. It is a companion that encourages improving and maintaining one’s mental state in a healthy approach, using mindful reflections.'/>
         </ProcessHolder>
 
         <ImageHolderPer>
-        <p>Click to see our Figma file!</p>
-        <Link href="https://www.figma.com/file/6C49WqM3rRGLIDEUOyiqna/Wecycle-StyleGuide?node-id=18%3A3">
-          <ImageTwo src='/prototype.png'/>
+          <p>Click to see our survey!</p>
+          <Link href="https://docs.google.com/forms/d/1_22tXhgGRMS07jL3wyijyifYjZLJUP9rThzg7VZ1nT8/edit?usp=sharing">
+          <ImageTwo src='/survey.png'/>
           </Link>
         </ImageHolderPer>
 
