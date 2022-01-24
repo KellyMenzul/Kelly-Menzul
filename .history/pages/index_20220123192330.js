@@ -294,13 +294,15 @@ export default function Home() {
   initial="hidden" animate="visible" variants={{
     hidden: {
       opacity:0,
+      x:90,
 
     },
     visible: {
       opacity: 1,
+      x:0,
 
       transition: {
-        delay:2,
+        delay:.10,
         duration:2
       }
     }

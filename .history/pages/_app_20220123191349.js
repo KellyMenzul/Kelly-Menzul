@@ -5,7 +5,8 @@ function MyApp({ Component, pageProps, router }) {
   return(
     <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
       pageInitial: {
-        opacity:0,
+        opacity:0
+        trasition
       },
       pageAnimate: {
         opacity:1,

@@ -300,7 +300,7 @@ export default function Home() {
       opacity: 1,
 
       transition: {
-        delay:2,
+        delay:3,
         duration:2
       }
     }

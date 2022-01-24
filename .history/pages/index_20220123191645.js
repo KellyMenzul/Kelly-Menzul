@@ -244,68 +244,18 @@ export default function Home() {
 
       <LandingHolder id='landing'>
         <LoadHolder as={motion.div}
-      initial="hidden" animate="visible" variants={{
-        hidden: {
-          opacity:0,
-          x:90,
-
-        },
-        visible: {
-          opacity: 1,
-          x:0,
-
-          transition: {
-            delay:.10,
-            duration:2
-          }
-        }
-      }}
         >
           <Load/>
         </LoadHolder>
         
-        <LandingHolderLeft
-          as={motion.div}
-          initial="hidden" animate="visible" variants={{
-            hidden: {
-              opacity:0,
-              x:-90,
-
-            },
-            visible: {
-              opacity: 1,
-              x:0,
-
-              transition: {
-                delay:.10,
-                duration:2
-              }
-            }
-          }}
-        >
+        <LandingHolderLeft>
           <NameHolder>
             <Name/>
             <Role/>
           </NameHolder>
         </LandingHolderLeft>
 
-        <LandingHolderRight
-  as={motion.div}
-  initial="hidden" animate="visible" variants={{
-    hidden: {
-      opacity:0,
-
-    },
-    visible: {
-      opacity: 1,
-
-      transition: {
-        delay:2,
-        duration:2
-      }
-    }
-  }}
-        >
+        <LandingHolderRight>
           <IntroHolder>
            <Intro/>
           </IntroHolder>

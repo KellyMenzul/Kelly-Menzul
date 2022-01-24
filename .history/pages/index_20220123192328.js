@@ -290,21 +290,7 @@ export default function Home() {
         </LandingHolderLeft>
 
         <LandingHolderRight
-  as={motion.div}
-  initial="hidden" animate="visible" variants={{
-    hidden: {
-      opacity:0,
 
-    },
-    visible: {
-      opacity: 1,
-
-      transition: {
-        delay:2,
-        duration:2
-      }
-    }
-  }}
         >
           <IntroHolder>
            <Intro/>

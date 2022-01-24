@@ -247,12 +247,11 @@ export default function Home() {
       initial="hidden" animate="visible" variants={{
         hidden: {
           opacity:0,
-          x:90,
+          x:100,
 
         },
         visible: {
           opacity: 1,
-          x:0,
 
           transition: {
             delay:.10,
@@ -264,48 +263,14 @@ export default function Home() {
           <Load/>
         </LoadHolder>
         
-        <LandingHolderLeft
-          as={motion.div}
-          initial="hidden" animate="visible" variants={{
-            hidden: {
-              opacity:0,
-              x:-90,
-
-            },
-            visible: {
-              opacity: 1,
-              x:0,
-
-              transition: {
-                delay:.10,
-                duration:2
-              }
-            }
-          }}
-        >
+        <LandingHolderLeft>
           <NameHolder>
             <Name/>
             <Role/>
           </NameHolder>
         </LandingHolderLeft>
 
-        <LandingHolderRight
-  as={motion.div}
-  initial="hidden" animate="visible" variants={{
-    hidden: {
-      opacity:0,
-
-    },
-    visible: {
-      opacity: 1,
-
-      transition: {
-        delay:2,
-        duration:2
-      }
-    }
-  }}
-        >
+        <LandingHolderRight>
           <IntroHolder>
            <Intro/>
           </IntroHolder>
