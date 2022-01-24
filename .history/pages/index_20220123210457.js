@@ -10,7 +10,7 @@ import Screens from '../comps/Screens'
 import { style } from '@mui/system'
 import { useState, useEffect } from 'react'
 import { animate, animationControls, motion, useAnimation } from 'framer-motion'
-import InView, { useInView } from 'react-intersection-observer'
+import { useInView } from 'react-intersection-observer'
 
 
 const Holder = styled.div`
@@ -238,24 +238,21 @@ padding-top:100px;
 export default function Home() {
   const {ref, inView} = useInView();
   const animation = useAnimation();
-  
 
   useEffect(()=> {
     if(inView){
       animation.start({
-        opacity:1,
+        x:0,
         transition: {
-          duration:3
+          duration:1,
         }
       });
     }
     if(!inView){
-      animation.start({opacity:0,})
+      animation.start({x:'-100'})
     }
     console.log("use effect hook, inView = ", inView);
   }, [inView]);
-
-
 
   return (
     <Holder>
@@ -337,8 +334,8 @@ export default function Home() {
         </LandingHolderRight>
       </LandingHolder>
 
-      <AboutHolder as={motion.div} ref={ref} animate={animation} id='about'>
-        <HeadHolder>
+      <AboutHolder ref={ref} id='about'>
+        <HeadHolder animate={animation}>
           <Head text='Hi there!'/>
         </HeadHolder>
         <AboutHolderLeft>

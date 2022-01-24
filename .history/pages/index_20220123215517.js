@@ -337,7 +337,20 @@ export default function Home() {
         </LandingHolderRight>
       </LandingHolder>
 
-      <AboutHolder as={motion.div} ref={ref} animate={animation} id='about'>
+      <InView>
+        {({ref, inView})=>(
+        <AboutHolder 
+        initial={{
+          opacity:0
+        }
+        animate={inView && {
+          opacity:1,
+          transition: {
+            duration:2,
+          }
+        }}
+        ref={ref}
+        as={motion.div} id='about'>
         <HeadHolder>
           <Head text='Hi there!'/>
         </HeadHolder>
@@ -354,7 +367,8 @@ export default function Home() {
               <Position fontsize='20px' text='Outside of web development I enjoy working on graphic design projects as well. I have collaborated with small businesses and created design brands and business cards for my past time. Outside of the tech world I enjoy hiking and snowboarding. One of my biggest interests are fashion and I spend a lot of time online shopping!'/>
             </AboutMeHolder>
         </AboutHolderRight>
-      </AboutHolder>
+      </AboutHolder>)}
+      </InView> 
 
       <AppHolder id="work">
         <Head text='Here is some of my work!'/>

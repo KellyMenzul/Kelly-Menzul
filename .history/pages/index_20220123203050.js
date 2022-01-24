@@ -8,9 +8,9 @@ import Load from '../comps/Load'
 import Role from '../comps/Role'
 import Screens from '../comps/Screens'
 import { style } from '@mui/system'
-import { useState, useEffect } from 'react'
-import { animate, animationControls, motion, useAnimation } from 'framer-motion'
-import InView, { useInView } from 'react-intersection-observer'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 
 const Holder = styled.div`
@@ -236,27 +236,7 @@ padding-top:100px;
 `
 
 export default function Home() {
-  const {ref, inView} = useInView();
-  const animation = useAnimation();
-  
-
-  useEffect(()=> {
-    if(inView){
-      animation.start({
-        opacity:1,
-        transition: {
-          duration:3
-        }
-      });
-    }
-    if(!inView){
-      animation.start({opacity:0,})
-    }
-    console.log("use effect hook, inView = ", inView);
-  }, [inView]);
-
-
-
+  const {ref, useInView} = useInView();
   return (
     <Holder>
       <MenuHolder>
@@ -264,12 +244,10 @@ export default function Home() {
       </MenuHolder>
       
 
-      <LandingHolder
-       id='landing'
-       >
+      <LandingHolder ref={ref} id='landing'>
+        
         <LoadHolder as={motion.div}
-        animate={animation}
-        initial="hidden" animate="visible" variants={{
+      initial="hidden" animate="visible" variants={{
         hidden: {
           opacity:0,
           x:90,
@@ -337,7 +315,7 @@ export default function Home() {
         </LandingHolderRight>
       </LandingHolder>
 
-      <AboutHolder as={motion.div} ref={ref} animate={animation} id='about'>
+      <AboutHolder id='about'>
         <HeadHolder>
           <Head text='Hi there!'/>
         </HeadHolder>

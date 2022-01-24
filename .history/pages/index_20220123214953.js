@@ -337,7 +337,9 @@ export default function Home() {
         </LandingHolderRight>
       </LandingHolder>
 
-      <AboutHolder as={motion.div} ref={ref} animate={animation} id='about'>
+      <InView>
+        {({ref, inView})=>
+        <AboutHolder as={motion.div} id='about'>
         <HeadHolder>
           <Head text='Hi there!'/>
         </HeadHolder>
@@ -355,6 +357,7 @@ export default function Home() {
             </AboutMeHolder>
         </AboutHolderRight>
       </AboutHolder>
+      </InView> 
 
       <AppHolder id="work">
         <Head text='Here is some of my work!'/>

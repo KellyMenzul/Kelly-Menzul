@@ -242,12 +242,8 @@ export default function Home() {
 
   useEffect(()=> {
     if(inView){
-      animation.start({
-        opacity:1,
-        transition: {
-          duration:3
-        }
-      });
+    <inView>
+      </inView>
     }
     if(!inView){
       animation.start({opacity:0,})
@@ -337,7 +333,7 @@ export default function Home() {
         </LandingHolderRight>
       </LandingHolder>
 
-      <AboutHolder as={motion.div} ref={ref} animate={animation} id='about'>
+      <AboutHolder animate={animation} as={motion.div} ref={ref} id='about'>
         <HeadHolder>
           <Head text='Hi there!'/>
         </HeadHolder>
