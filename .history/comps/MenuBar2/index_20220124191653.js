@@ -8,7 +8,6 @@ display:flex;
 align-items:center;
 justify-content:center;
 width:100%;
-height:150px;
 background: rgb(255,255,255);
 background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,0) 100%);
 
@@ -75,7 +74,7 @@ const MenuBar2 = ({
 }) => { 
     return <Holder>
         <Left>
-            <Link href="../">
+            <Link href="#landing">
             <LogoHolder>
                 <Logo src="logo.png"/>
             </LogoHolder>

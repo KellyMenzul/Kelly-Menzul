@@ -12,7 +12,7 @@ var anim = null;
 
 
 const Load = ({
-    width="150%"
+    width
 }) => {
     const container = useRef(null)
 
@@ -28,7 +28,7 @@ const Load = ({
         lottie.setSpeed(0.1);
     }, [])
 
-    return <Container width={width}>
+    return <Container>
         <div className="container" ref={container}></div>
     </Container>
 }

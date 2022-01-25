@@ -75,7 +75,7 @@ const MenuBar2 = ({
 }) => { 
     return <Holder>
         <Left>
-            <Link href="../">
+            <Link href="../#landing">
             <LogoHolder>
                 <Logo src="logo.png"/>
             </LogoHolder>

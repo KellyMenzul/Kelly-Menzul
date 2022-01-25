@@ -8,7 +8,6 @@ display:flex;
 align-items:center;
 justify-content:center;
 width:100%;
-height:150px;
 background: rgb(255,255,255);
 background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(148,187,233,0) 100%);
 
@@ -53,14 +52,12 @@ padding:12px;
 &:hover {
     text-decoration:underline;
 }
-
 @media only screen and (max-width: 1500px) {
     font-size:16px;
 }
 `
 
 const Logo = styled.img`
-width:10%;
 
 @media only screen and (max-width: 550px){
     display:none;
@@ -68,26 +65,25 @@ width:10%;
 `
 
 
-
-const MenuBar2 = ({
+const MenuBar = ({
     onButtonPress=()=>{},
     bgcolor="transparent",
 }) => { 
     return <Holder>
         <Left>
-            <Link href="../">
+            <Link href="#landing">
             <LogoHolder>
-                <Logo src="logo.png"/>
+                <Logo/>
             </LogoHolder>
             </Link>
         </Left>
         <Right>
             <MenuButtonHolder>
-                <Link href="../#about">
+                <Link href="#about">
                     <MenuButton bgcolor={bgcolor} onClick={()=>{onButtonPress()}}>About</MenuButton>
                 </Link>
 
-                <Link href="../#work">
+                <Link href="#work">
                 <MenuButton bgcolor={bgcolor}>Work</MenuButton>
                 </Link>
                 
@@ -102,4 +98,4 @@ const MenuBar2 = ({
     </Holder>
 }
 
-export default MenuBar2;
+export default MenuBar;

@@ -4,16 +4,14 @@ import lottie from 'lottie-web';
 
 
 const Container = styled.div`
-    width:${props=>props.width};
+    width:150%;
 `
 
 // const Buttons = styled.button``
 var anim = null;
 
 
-const Load = ({
-    width="150%"
-}) => {
+const Load = ({}) => {
     const container = useRef(null)
 
     useEffect(() => {
@@ -28,7 +26,7 @@ const Load = ({
         lottie.setSpeed(0.1);
     }, [])
 
-    return <Container width={width}>
+    return <Container>
         <div className="container" ref={container}></div>
     </Container>
 }

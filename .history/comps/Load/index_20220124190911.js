@@ -28,7 +28,7 @@ const Load = ({
         lottie.setSpeed(0.1);
     }, [])
 
-    return <Container width={width}>
+    return <Container width>
         <div className="container" ref={container}></div>
     </Container>
 }

@@ -11,9 +11,7 @@ const Container = styled.div`
 var anim = null;
 
 
-const Load = ({
-    width="150%"
-}) => {
+const Load = ({}) => {
     const container = useRef(null)
 
     useEffect(() => {
@@ -28,7 +26,7 @@ const Load = ({
         lottie.setSpeed(0.1);
     }, [])
 
-    return <Container width={width}>
+    return <Container>
         <div className="container" ref={container}></div>
     </Container>
 }

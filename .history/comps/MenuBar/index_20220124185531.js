@@ -53,7 +53,6 @@ padding:12px;
 &:hover {
     text-decoration:underline;
 }
-
 @media only screen and (max-width: 1500px) {
     font-size:16px;
 }
@@ -68,14 +67,13 @@ width:10%;
 `
 
 
-
-const MenuBar2 = ({
+const MenuBar = ({
     onButtonPress=()=>{},
     bgcolor="transparent",
 }) => { 
     return <Holder>
         <Left>
-            <Link href="../">
+            <Link href="#landing">
             <LogoHolder>
                 <Logo src="logo.png"/>
             </LogoHolder>
@@ -83,11 +81,11 @@ const MenuBar2 = ({
         </Left>
         <Right>
             <MenuButtonHolder>
-                <Link href="../#about">
+                <Link href="#about">
                     <MenuButton bgcolor={bgcolor} onClick={()=>{onButtonPress()}}>About</MenuButton>
                 </Link>
 
-                <Link href="../#work">
+                <Link href="#work">
                 <MenuButton bgcolor={bgcolor}>Work</MenuButton>
                 </Link>
                 
@@ -102,4 +100,4 @@ const MenuBar2 = ({
     </Holder>
 }
 
-export default MenuBar2;
+export default MenuBar;

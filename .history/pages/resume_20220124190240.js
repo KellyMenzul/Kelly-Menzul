@@ -165,8 +165,8 @@ justify-content:center;
 const LoadHolder = styled.div`
 position:absolute;
 z-index:-1;
-top:-300px;
-left:200px;
+top:0px;
+
 
 @media only screen and (max-width: 1500px) {
   position:none;
@@ -235,7 +235,7 @@ margin-top:100px;
 padding-top:100px;
 `
 
-export default function Home() {
+export default function Resume() {
   // const {ref, inView} = useInView();
   // const animation = useAnimation();
   
@@ -271,59 +271,7 @@ export default function Home() {
         >
           <Load/>
         </LoadHolder>
-        
-        <LandingHolderLeft
-        >
-          <NameHolder>
-            <Name/>
-            <Role/>
-          </NameHolder>
-        </LandingHolderLeft>
-
-        <LandingHolderRight
-        >
-          <IntroHolder>
-           <Intro/>
-          </IntroHolder>
-        </LandingHolderRight>
-      </LandingHolder>
-
-      <AboutHolder id='about'>
-        <HeadHolder>
-          <Head text='Hi There!'/>
-        </HeadHolder>
-        <AboutHolderLeft>
-          <HeroImage src='/me.png'/>
-        </AboutHolderLeft>
-        <AboutHolderRight>
-            <AboutMeHolder>
-            <FullHeadHolder>
-              <Head text='Hi there!'/>
-            </FullHeadHolder>  
-              <Position fontsize='20px' text='My name is Kelly and I am a front-end developer and UX/UI Designer! I like to create online platforms and easy to use interface designs. My passion started when I took a digital media class in high school, where I developed an interest in development and design which has lead me to where I am today.'/>
-              <Position fontsize='20px' text='I graduated from the Digital Design and Development program at British Columbia Institute of Technology and have spent a large portion of my time working on projects and collaborating with various individuals and teams. My main priorities include building dynamic interactive cross platforms that are accessible for users.'/>
-              <Position fontsize='20px' text='Outside of web development I enjoy working on graphic design projects as well. I have collaborated with small businesses and created design brands and business cards for my past time. Outside of the tech world I enjoy hiking and snowboarding. One of my biggest interests are fashion and I spend a lot of time online shopping!'/>
-            </AboutMeHolder>
-        </AboutHolderRight>
-      </AboutHolder>
-
-      <AppHolder id="work">
-        <Head text='Here is some of my work!'/>
-      </AppHolder>
-      
-      <WorkHolder>
-      <ContainerLeft>
-            <Screens info='Front-end Development | UX/UI Design' linkhref='/mindful' name='Mindful'/>
-            <Screens info='Wordpress | UX/UI Design' linkhref='/tinypaws' src='tinypawsscreen.png' name='Tinypaws' />
-          </ContainerLeft>
-          <ContainerRight>
-            <Screens info='Front-end Development | UX/UI Design'  linkhref='/wecycle' name='Wecycle' src='wecyclescreen.png'/>
-            <Screens info='Wordpress | UX/UI Design' linkhref='/frankocean' src='frankoceanscreen.png' name='Frank Ocean'/>
-          </ContainerRight>
-      </WorkHolder>
-
-      
-
+        </LandingHolder>
     </Holder>
   )
 }
