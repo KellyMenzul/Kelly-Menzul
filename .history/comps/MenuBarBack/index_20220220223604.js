@@ -238,13 +238,12 @@ const MenuBarBack = ({
         catdisp4 = "flex";
     }
     return <Holder>
-        <Top>
         <Link href="./">
+        <Top>
             <Logo src="logo.png"/>
-        </Link>
             <MenuIcon rotate={rotate} src="/plus.svg" onClick={()=>setOpen(!open)}/>
         </Top>
-
+        </Link>
         <Bottom display={display} transition={transition}>
             <Link href="../#landing">
                 <Bottom1 onClick={()=>setOpen(false)} catdisp1={catdisp1} transition1={transition1} transitiondelay1={transitiondelay1} opacity1={opacity1}>
@@ -266,7 +265,7 @@ const MenuBarBack = ({
                     </AboutWord>
                 </Bottom2>
             </Link>
-            <Link href="../#work">
+            <Link href="#work">
                 <Bottom3 onClick={()=>setOpen(false)} catdisp3={catdisp3} transition3={transition3} transitiondelay3={transitiondelay3} opacity3={opacity3}>
                     <WorkNumber>
                         <Three>3.</Three>

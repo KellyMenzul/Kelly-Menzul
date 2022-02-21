@@ -238,10 +238,9 @@ const MenuBarBack = ({
         catdisp4 = "flex";
     }
     return <Holder>
-        <Top>
         <Link href="./">
+        <Top>
             <Logo src="logo.png"/>
-        </Link>
             <MenuIcon rotate={rotate} src="/plus.svg" onClick={()=>setOpen(!open)}/>
         </Top>
 

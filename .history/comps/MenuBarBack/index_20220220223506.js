@@ -72,21 +72,21 @@ const MenuIcon = styled.img `
 width:30px;
 height:30px;
 transform: ${props=>props.rotate};
-transition:transform 0.3s ease-in-out;
+transition:transform 0.5s ease-in-out;
 `
 
 const Bottom = styled.div `
-display:${props=>props.display};
+display:flex;
 flex-direction:column;
 align-items:center;
 width:100%;
-height:100vh;
+height:${props=>props.height}vh;
 background-color:white;
 transition:${props=>props.transition};
 `
 const Bottom1 = styled.div `
 margin-top:100px;
-display:${props=>props.catdisp1};
+display:flex;
 flex-direction:row;
 width:90%;
 height:10%;
@@ -108,7 +108,7 @@ font-size:40px;
 `
 
 const Bottom2 = styled.div `
-display:${props=>props.catdisp2};
+display:flex;
 flex-direction:row;
 width:90%;
 height:10%;
@@ -129,7 +129,7 @@ font-size:40px;
 `
 
 const Bottom3 = styled.div `
-display:${props=>props.catdisp3};
+display:flex;
 flex-direction:row;
 width:90%;
 height:10%;
@@ -172,15 +172,14 @@ const Work = styled.p `
 font-family:"heading";
 `
 const Contact = styled.div`
-height:40%;
+height:100vh;
 width:90%;
-display:${props=>props.catdisp4};
+display:flex;
 flex-direction:column;
 justify-content:flex-end;
 opacity:${props=>props.opacity4};
 transition-delay:${props=>props.transitiondelay4};
 transition:${props=>props.transition4};
-
 `
 
 const Email = styled.p `
@@ -194,7 +193,6 @@ const MenuBarBack = ({
     bgcolor="transparent",
 }) => { 
     const [open, setOpen] = useState(false);
-    // var height = '0';
     var display = 'none';
     var rotate = 0;
     var transition = '5s ease-in-out';
@@ -239,15 +237,14 @@ const MenuBarBack = ({
     }
     return <Holder>
         <Top>
-        <Link href="./">
-            <Logo src="logo.png"/>
-        </Link>
+            <Link href="./">
+                <Logo src="logo.png"/>
+            </Link>
             <MenuIcon rotate={rotate} src="/plus.svg" onClick={()=>setOpen(!open)}/>
         </Top>
-
-        <Bottom display={display} transition={transition}>
-            <Link href="../#landing">
-                <Bottom1 onClick={()=>setOpen(false)} catdisp1={catdisp1} transition1={transition1} transitiondelay1={transitiondelay1} opacity1={opacity1}>
+        <Bottom transition={transition} height={height}>
+            <Link href="../#about">
+                <Bottom1 onClick={()=>setOpen(false)} transition1={transition1} transitiondelay1={transitiondelay1} opacity1={opacity1}>
                     <HomeNumber>
                         <One>1.</One>
                     </HomeNumber>
@@ -257,7 +254,7 @@ const MenuBarBack = ({
                 </Bottom1>
             </Link>
             <Link href="../#about" >
-                <Bottom2 onClick={()=>setOpen(false)} catdisp2={catdisp2} transition2={transition2} transitiondelay2={transitiondelay1} opacity2={opacity2}>
+                <Bottom2 onClick={()=>setOpen(false)} transition2={transition2} transitiondelay2={transitiondelay1} opacity2={opacity2}>
                     <AboutNumber>
                         <Two>2.</Two>
                     </AboutNumber>
@@ -267,7 +264,7 @@ const MenuBarBack = ({
                 </Bottom2>
             </Link>
             <Link href="../#work">
-                <Bottom3 onClick={()=>setOpen(false)} catdisp3={catdisp3} transition3={transition3} transitiondelay3={transitiondelay3} opacity3={opacity3}>
+                <Bottom3 onClick={()=>setOpen(false)} transition3={transition3} transitiondelay3={transitiondelay3} opacity3={opacity3}>
                     <WorkNumber>
                         <Three>3.</Three>
                     </WorkNumber>
@@ -276,11 +273,35 @@ const MenuBarBack = ({
                     </WorkWord>
                 </Bottom3>
             </Link>
-            <Contact transition4={transition4} catdisp4={catdisp4} transitiondelay4={transitiondelay4} opacity4={opacity4}>
+            <Contact transition4={transition4} transitiondelay4={transitiondelay4} opacity4={opacity4}>
                 <Email>kmnzul@gmail.com<br/> 604-710-4926</Email>
             </Contact>
-            
         </Bottom>
+        
+
+        {/* <Left>
+            <Link href="../">
+            <LogoHolder>
+                <Logo src="logo.png"/>
+            </LogoHolder>
+            </Link>
+        </Left>
+        <Right>
+            <MenuButtonHolder>
+                <Link href="../#about">
+                    <MenuButton bgcolor={bgcolor} onClick={()=>{onButtonPress()}}>About</MenuButton>
+                </Link>
+
+                <Link href="../#work">
+                <MenuButton bgcolor={bgcolor}>Work</MenuButton>
+                </Link>
+
+                <Link href="mailto:kmnzul@gmail.com">
+                <MenuButton bgcolor={bgcolor}>Contact</MenuButton>
+                </Link>
+                
+            </MenuButtonHolder>
+        </Right>   */}
     </Holder>
 }
 

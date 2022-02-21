@@ -241,7 +241,6 @@ const MenuBarBack = ({
         <Top>
         <Link href="./">
             <Logo src="logo.png"/>
-        </Link>
             <MenuIcon rotate={rotate} src="/plus.svg" onClick={()=>setOpen(!open)}/>
         </Top>
 
