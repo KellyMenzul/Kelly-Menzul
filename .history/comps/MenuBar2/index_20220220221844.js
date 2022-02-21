@@ -72,7 +72,7 @@ const MenuIcon = styled.img `
 width:30px;
 height:30px;
 transform: ${props=>props.rotate};
-transition:transform 0.3s ease-in-out;
+transition:transform 0.5s ease-in-out;
 `
 
 const Bottom = styled.div `
@@ -80,7 +80,7 @@ display:${props=>props.display};
 flex-direction:column;
 align-items:center;
 width:100%;
-height:100vh;
+height:70vh;
 background-color:white;
 transition:${props=>props.transition};
 `
@@ -172,7 +172,7 @@ const Work = styled.p `
 font-family:"heading";
 `
 const Contact = styled.div`
-height:50%;
+height:100%;
 width:90%;
 display:${props=>props.catdisp4};
 flex-direction:column;

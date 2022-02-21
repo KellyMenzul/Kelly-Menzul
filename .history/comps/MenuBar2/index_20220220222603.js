@@ -172,6 +172,7 @@ const Work = styled.p `
 font-family:"heading";
 `
 const Contact = styled.div`
+background-color:red;
 height:50%;
 width:90%;
 display:${props=>props.catdisp4};

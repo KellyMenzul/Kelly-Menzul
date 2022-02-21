@@ -72,15 +72,15 @@ const MenuIcon = styled.img `
 width:30px;
 height:30px;
 transform: ${props=>props.rotate};
-transition:transform 0.3s ease-in-out;
+transition:transform 0.5s ease-in-out;
 `
 
 const Bottom = styled.div `
-display:${props=>props.display};
+display:flex;
 flex-direction:column;
 align-items:center;
 width:100%;
-height:100vh;
+height:${props=>props.height}vh;
 background-color:white;
 transition:${props=>props.transition};
 `
@@ -172,14 +172,14 @@ const Work = styled.p `
 font-family:"heading";
 `
 const Contact = styled.div`
-height:50%;
+height:100vh;
 width:90%;
 display:${props=>props.catdisp4};
 flex-direction:column;
 justify-content:flex-end;
 opacity:${props=>props.opacity4};
 transition-delay:${props=>props.transitiondelay4};
-transition:${props=>props.transition4};
+transition:${props=>props.transition4},  2s;
 
 `
 
@@ -194,10 +194,10 @@ const MenuBar2 = ({
     bgcolor="transparent",
 }) => { 
     const [open, setOpen] = useState(false);
-    // var height = '0';
+    var height = '0';
     var display = 'none';
     var rotate = 0;
-    var transition = '5s ease-in-out';
+    var transition = '0.5s ease-in-out';
     var opacity1 = 0;
     var transitiondelay1 = '0.5';
     var transition1 = "0.2s";
@@ -216,7 +216,7 @@ const MenuBar2 = ({
     var catdisp4 = "none";
 
     if(open){
-        // height = '90';
+        height = '90';
         display = 'flex';
         rotate = 'rotate(45deg)'
         transition = '0.5s ease-in-out';
@@ -244,7 +244,7 @@ const MenuBar2 = ({
             <MenuIcon rotate={rotate} src="/plus.svg" onClick={()=>setOpen(!open)}/>
         </Top>
         </Link>
-        <Bottom display={display} transition={transition}>
+        <Bottom transition={transition} height={height}>
             <Link href="#landing">
                 <Bottom1 onClick={()=>setOpen(false)} catdisp1={catdisp1} transition1={transition1} transitiondelay1={transitiondelay1} opacity1={opacity1}>
                     <HomeNumber>

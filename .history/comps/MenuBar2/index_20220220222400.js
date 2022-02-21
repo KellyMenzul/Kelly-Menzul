@@ -172,7 +172,6 @@ const Work = styled.p `
 font-family:"heading";
 `
 const Contact = styled.div`
-height:50%;
 width:90%;
 display:${props=>props.catdisp4};
 flex-direction:column;

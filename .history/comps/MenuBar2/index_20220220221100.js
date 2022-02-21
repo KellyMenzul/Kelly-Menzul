@@ -72,15 +72,15 @@ const MenuIcon = styled.img `
 width:30px;
 height:30px;
 transform: ${props=>props.rotate};
-transition:transform 0.3s ease-in-out;
+transition:transform 0.5s ease-in-out;
 `
 
 const Bottom = styled.div `
-display:${props=>props.display};
+display:flex;
 flex-direction:column;
 align-items:center;
 width:100%;
-height:100vh;
+height:${props=>props.height}vh;
 background-color:white;
 transition:${props=>props.transition};
 `
@@ -115,7 +115,6 @@ height:10%;
 justify-content:center;
 align-items:center;
 border-bottom:solid 1px;
-opacity:${props=>props.opacity2};
 transition-delay:${props=>props.transitiondelay2};
 transition:${props=>props.transition2};
 `
@@ -136,7 +135,6 @@ height:10%;
 justify-content:center;
 align-items:center;
 border-bottom:solid 1px;
-opacity:${props=>props.opacity3};
 transition-delay:${props=>props.transitiondelay3};
 transition:${props=>props.transition3};
 `
@@ -172,7 +170,7 @@ const Work = styled.p `
 font-family:"heading";
 `
 const Contact = styled.div`
-height:50%;
+height:100vh;
 width:90%;
 display:${props=>props.catdisp4};
 flex-direction:column;
@@ -219,7 +217,7 @@ const MenuBar2 = ({
         // height = '90';
         display = 'flex';
         rotate = 'rotate(45deg)'
-        transition = '0.5s ease-in-out';
+        transition = '5s ease-in-out';
         opacity1 = 1;
         transitiondelay1 = '0.5s';
         transition1 = "1.5s";
@@ -244,7 +242,7 @@ const MenuBar2 = ({
             <MenuIcon rotate={rotate} src="/plus.svg" onClick={()=>setOpen(!open)}/>
         </Top>
         </Link>
-        <Bottom display={display} transition={transition}>
+        <Bottom transition={transition}>
             <Link href="#landing">
                 <Bottom1 onClick={()=>setOpen(false)} catdisp1={catdisp1} transition1={transition1} transitiondelay1={transitiondelay1} opacity1={opacity1}>
                     <HomeNumber>

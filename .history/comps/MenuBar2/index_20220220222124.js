@@ -80,7 +80,7 @@ display:${props=>props.display};
 flex-direction:column;
 align-items:center;
 width:100%;
-height:100vh;
+height:100%;
 background-color:white;
 transition:${props=>props.transition};
 `
@@ -172,7 +172,7 @@ const Work = styled.p `
 font-family:"heading";
 `
 const Contact = styled.div`
-height:50%;
+height:100vh;
 width:90%;
 display:${props=>props.catdisp4};
 flex-direction:column;
