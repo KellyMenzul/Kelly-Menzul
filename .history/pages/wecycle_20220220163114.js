@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Head from '../comps/Head'
+import Head from '../comps/Head
 import ProjectDeliverable from '../comps/ProjectDeliverable'
 import Process from '../comps/Proccess'
 import RegularButton from '../comps/RegularButton'

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Head from '../comps/Head'
+import MenuBar2 from '../comps/MenuBar2'
 import ProjectDeliverable from '../comps/ProjectDeliverable'
 import Process from '../comps/Proccess'
 import RegularButton from '../comps/RegularButton'
@@ -7,7 +8,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import Load2 from '../comps/Load2'
 import { motion } from 'framer-motion'
-import styles from '../styles/Home.module.css'
+import styles from "../styles/Home.module.css";
 import AboutMeAccordion from '../comps/AboutMeAccordion'
 import MenuBarBack from '../comps/MenuBarBack'
 
@@ -15,6 +16,7 @@ const Container = styled.div`
 display:flex;
 flex-direction:column;
 width:100%;
+padding:10px;
 height:100%;
 align-items:center;
 justify-content:center;
@@ -49,17 +51,8 @@ const ImageHolder = styled.div`
 display:flex;
 align-items:center;
 justify-content:center;
-width:50%;
-height:40%;
-transition:2s;
-`
-
-const ImageHolder2 = styled.div `
-display:flex;
-align-items:center;
-justify-content:center;
 width:100%;
-height:40%;
+height:100%;
 `
 
 const ImageHolderPer = styled.div`
@@ -67,25 +60,24 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-width:90%;
-height:40%;
-transition:2s;
+width:100%;
+height:100%;
+}
 `
 
 const ImageOne = styled.img`
 object-fit:cover;
-width:100%;
-height:80%;
+width:120%;
 `
 
 const ImageTwo = styled.img`
 object-fit:cover;
-width:150%;
+width:60%;
 `
 
 const ImageThree = styled.img`
 object-fit:cover;
-width:150%;
+width:100%;
 `
 
 const DeliverableHolder = styled.div `
@@ -93,8 +85,12 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-width:90%;
-height:50vh;
+width:100%;
+height:100%;
+
+@media only screen and (max-width: 600px) {
+  gap:20px;
+}
 `
 
 const ProcessHolder = styled.div `
@@ -115,6 +111,7 @@ flex-direction:row;
 height:40vh;
 gap:30px;
 margin-top:30px;
+
 @media only screen and (max-width: 600px) {
   flex-direction:column;
 }
@@ -125,15 +122,20 @@ display:flex;
 flex-direction:row;
 gap:30px;
 margin-bottom:50px;
+
 @media only screen and (max-width: 600px) {
   flex-direction:column;
+  justify-content:center;
+  align-items:center;
   margin-top:50px;
 }
 `
 
 const Mindful = styled.a`
 text-decoration:underline;
+margin-top:20px;
 `
+
 const AccordionHolder = styled.div `
 display:none;
 width:100%;
@@ -143,7 +145,8 @@ width:100%;
 }
 `
 
-export default function Wecycle() {
+
+export default function MindfulApp() {
   const [setup1, setSetup1] =  useState(false)
 
   if (setup1 === false) {
@@ -153,20 +156,20 @@ export default function Wecycle() {
 
     return <LoadHolder
     as={motion.div}
-    initial="hidden" animate="visible" variants={{
-      hidden: {
-        opacity:1,
+      initial="hidden" animate="visible" variants={{
+        hidden: {
+          opacity:1,
 
-      },
-      visible: {
-        opacity: 0,
+        },
+        visible: {
+          opacity: 0,
 
-        transition: {
-          duration:1,
-          delay:1
+          transition: {
+            duration:1,
+            delay:1
+          }
         }
-      }
-    }}
+      }}
     >
       <Load2/>
     </LoadHolder>
@@ -193,55 +196,55 @@ export default function Wecycle() {
           <MenuBarBack/>
         </MenuHolder>
         <Headholder>
-          <Head textalign='center' text='Wecycle'/>
+          <Head textalign='center' text='Mindful'/>
         </Headholder>
 
         <ButtonHolder2>
           <RegularButton link='../#work' buttontext='Go Back'/>
-          <RegularButton target='_blank' link='https://wecycle-apps.vercel.app/Home' buttontext='Visit Wecycle'/>
+          <RegularButton target='_blank' link='http://www.kellymenzul.ca/Mindful/' buttontext='About Mindful'/>
+          <RegularButton target='_blank' link='https://idsp3380-client.herokuapp.com/' buttontext='Visit Mindful'/>
         </ButtonHolder2>
 
-        <ImageHolder2>
-          <ImageOne src='/wecycle.png'/>
-        </ImageHolder2>
+        <ImageHolder>
+          <ImageOne src='/mindfulmockup.png'/>
+        </ImageHolder>
 
         <DeliverableHolder>
-          <ProjectDeliverable projecttext="Wecycle's mission is to educate their users about the importance of recycling. Wecycle wants to be the bridge between parents/teachers and children when it comes to an engaging and fun learning experience."
-          delivetext='Next.js, Storybook, Styled-Components'
-          teamtext='Kelly Menzul, Hannah Cabug, Hyerin Cheon, Leah Mah'
+          <ProjectDeliverable 
+          projecttext='Mindful is an application that acts as your mental health “companion”. It provides you with daily reminders to take a moment out of your day to self-reflect on your emotions. Invest in yourself and share your thoughts.'
           />
           <AccordionHolder>
             <AboutMeAccordion 
             firsttitle='DELIVERABLES'
-            firsttext='Next.js, Storybook, Styled-Components'
+            firsttext='Next.js, Storybook, Axios, MUI, Lottie, Framer Motion, Styled-Components'
             secondtitle='TEAM'
-            secondtext='Kelly Menzul, Hannah Cabug, Hyerin Cheon, Leah Mah'
+            secondtext='Kelly Menzul, Hannah Cabug, Hannah MacPherson, Kailin Wei, Mai Toyoda, Hongsoon Kim'
             />
           </AccordionHolder>
         </DeliverableHolder>
 
         <ProcessHolder>
-          <Process text="Waste management is prevelant in today's world however, children have difficulties paying attention and retaining information in school and at home."/>
+          <Process text='There is a negative stigma about mental health in today’s society. People refrain from having an open discussion about their emotions with others.'/>
         </ProcessHolder>
 
         <ImageHolder>
-          <ImageTwo src='/wecyclepic.png'/>
+          <ImageTwo src='/mindful.png'/>
         </ImageHolder>
 
         <ProcessHolder>
-          <Process head='The Ideation' text='Create an interactive application with visuals and components that allows children to earn badges as they complete all three waste regions.'/>
+          <Process head='The Ideation' text='Mindful is focused on managing the user’s mental health which includes emotions and well-being. It is a companion that encourages improving and maintaining one’s mental state in a healthy approach, using mindful reflections.'/>
         </ProcessHolder>
 
         <ImageHolderPer>
-        <Link href="https://www.figma.com/file/6C49WqM3rRGLIDEUOyiqna/Wecycle-StyleGuide?node-id=18%3A3">
-          <a target='_blank' className={styles.figma}>
-          <ImageThree src='/prototype.png'/>
+          <Link href="https://docs.google.com/forms/d/1_22tXhgGRMS07jL3wyijyifYjZLJUP9rThzg7VZ1nT8/edit?usp=sharing">
+            <a className={styles.survey} target="_blank">
+          <ImageThree src='/survey.png'/>
           </a>
           </Link>
         </ImageHolderPer>
 
         <ProcessHolder>
-          <Process head='The Solution' text='Design an interactive application with easy navigation. Implement fun graphics that are appealing to the target user and body texts that are not overwhelming.'/>
+          <Process head='The Solution' text='Mindful is an application with features such as the journal section, infinite jokes card, chat system (coming soon), and breathe tool.'/>
         </ProcessHolder>
 
         <ThankHolder>
