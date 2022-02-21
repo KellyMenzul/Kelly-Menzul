@@ -30,7 +30,7 @@ width:100%;
 position:fixed;
 justify-content:center;
 align-items:center;
-z-index:1;
+z-index:2;
 `
 const ContentHolder = styled.div `
 display:flex;

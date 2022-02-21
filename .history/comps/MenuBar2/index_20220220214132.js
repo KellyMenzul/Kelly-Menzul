@@ -193,7 +193,7 @@ const MenuBar2 = ({
     bgcolor="transparent",
 }) => { 
     const [open, setOpen] = useState(false);
-    var height = 0;
+    var height = '0px';
     var display = 'none';
     var rotate = 0;
     var transition = '0.5s ease-in-out';
@@ -212,7 +212,7 @@ const MenuBar2 = ({
 
     if(open){
         height = '90';
-        display = 'block';
+        display = 'flex';
         rotate = 'rotate(45deg)'
         transition = '0.5s ease-in-out';
         opacity1 = 1;

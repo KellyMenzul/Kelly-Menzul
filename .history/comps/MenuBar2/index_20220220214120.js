@@ -211,8 +211,8 @@ const MenuBar2 = ({
     var transition4 = "0.2s";
 
     if(open){
-        height = '90';
-        display = 'block';
+        height = '10';
+        display = 'flex';
         rotate = 'rotate(45deg)'
         transition = '0.5s ease-in-out';
         opacity1 = 1;

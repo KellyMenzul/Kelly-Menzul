@@ -424,10 +424,10 @@ export default function Home() {
 
   return (
     <Holder>
-      <MenuHolder>
+      {/* <MenuHolder>
         <MenuBar />
         <MenuBar2/>
-      </MenuHolder>
+      </MenuHolder> */}
       <ContentHolder>
       <LandingHolder>
         <LandingHolderLeft>

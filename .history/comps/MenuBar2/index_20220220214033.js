@@ -212,7 +212,7 @@ const MenuBar2 = ({
 
     if(open){
         height = '90';
-        display = 'block';
+        display = 'flex';
         rotate = 'rotate(45deg)'
         transition = '0.5s ease-in-out';
         opacity1 = 1;
@@ -233,8 +233,8 @@ const MenuBar2 = ({
         <Top>
             <Logo src="logo.png"/>
             <MenuIcon rotate={rotate} src="/plus.svg" onClick={()=>setOpen(!open)}/>
-        </Top>
         </Link>
+        </Top>
         <Bottom transition={transition} height={height}>
             <Link href="#landing">
                 <Bottom1 onClick={()=>setOpen(false)} transition1={transition1} transitiondelay1={transitiondelay1} opacity1={opacity1}>

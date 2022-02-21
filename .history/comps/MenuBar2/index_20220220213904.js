@@ -7,6 +7,9 @@ import { useState } from "react";
 const Holder = styled.div `
 display:flex;
 flex-direction:column;
+position:fixed;
+z-index:2;
+top:0px;
 width:100%;
 height:100%;
 align-items:center;
@@ -212,7 +215,7 @@ const MenuBar2 = ({
 
     if(open){
         height = '90';
-        display = 'block';
+        display = 'flex';
         rotate = 'rotate(45deg)'
         transition = '0.5s ease-in-out';
         opacity1 = 1;
