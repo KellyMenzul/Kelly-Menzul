@@ -176,6 +176,7 @@ height:100vh;
 width:90%;
 display:${props=>props.catdisp4};
 flex-direction:column;
+background-color:red;
 justify-content:flex-end;
 opacity:${props=>props.opacity4};
 transition-delay:${props=>props.transitiondelay4};

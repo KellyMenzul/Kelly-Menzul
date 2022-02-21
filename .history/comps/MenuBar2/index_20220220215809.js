@@ -176,6 +176,7 @@ height:100vh;
 width:90%;
 display:${props=>props.catdisp4};
 flex-direction:column;
+background-color:red;
 justify-content:flex-end;
 opacity:${props=>props.opacity4};
 transition-delay:${props=>props.transitiondelay4};
@@ -274,7 +275,7 @@ const MenuBar2 = ({
                     </WorkWord>
                 </Bottom3>
             </Link>
-            <Contact transition4={transition4} catdisp4={catdisp4} transitiondelay4={transitiondelay4} opacity4={opacity4}>
+            <Contact transition4={transition4} cat transitiondelay4={transitiondelay4} opacity4={opacity4}>
                 <Email>kmnzul@gmail.com<br/> 604-710-4926</Email>
             </Contact>
             

@@ -176,6 +176,7 @@ height:100vh;
 width:90%;
 display:${props=>props.catdisp4};
 flex-direction:column;
+background-color:red;
 justify-content:flex-end;
 opacity:${props=>props.opacity4};
 transition-delay:${props=>props.transitiondelay4};
@@ -209,10 +210,8 @@ const MenuBar2 = ({
     var opacity4 = 0;
     var transitiondelay4 = '0.5';
     var transition4 = "0.2s";
-    var catdisp1 = "none";
-    var catdisp2 = "none";
-    var catdisp3 = "none";
-    var catdisp4 = "none";
+    var catdisp1 = "none"
+    var catdisp2
 
     if(open){
         height = '90';
@@ -231,10 +230,6 @@ const MenuBar2 = ({
         opacity4 = 1;
         transitiondelay4 = '2s';
         transition4 = "1.5s";
-        catdisp1 = "flex";
-        catdisp2 = "flex";
-        catdisp3 = "flex";
-        catdisp4 = "flex";
     }
     return <Holder>
         <Link href="./">
@@ -245,7 +240,7 @@ const MenuBar2 = ({
         </Link>
         <Bottom transition={transition} height={height}>
             <Link href="#landing">
-                <Bottom1 onClick={()=>setOpen(false)} catdisp1={catdisp1} transition1={transition1} transitiondelay1={transitiondelay1} opacity1={opacity1}>
+                <Bottom1 onClick={()=>setOpen(false)} transition1={transition1} transitiondelay1={transitiondelay1} opacity1={opacity1}>
                     <HomeNumber>
                         <One>1.</One>
                     </HomeNumber>
@@ -255,7 +250,7 @@ const MenuBar2 = ({
                 </Bottom1>
             </Link>
             <Link href="#about" >
-                <Bottom2 onClick={()=>setOpen(false)} catdisp2={catdisp2} transition2={transition2} transitiondelay2={transitiondelay1} opacity2={opacity2}>
+                <Bottom2 onClick={()=>setOpen(false)} transition2={transition2} transitiondelay2={transitiondelay1} opacity2={opacity2}>
                     <AboutNumber>
                         <Two>2.</Two>
                     </AboutNumber>
@@ -265,7 +260,7 @@ const MenuBar2 = ({
                 </Bottom2>
             </Link>
             <Link href="#work">
-                <Bottom3 onClick={()=>setOpen(false)} catdisp3={catdisp3} transition3={transition3} transitiondelay3={transitiondelay3} opacity3={opacity3}>
+                <Bottom3 onClick={()=>setOpen(false)} transition3={transition3} transitiondelay3={transitiondelay3} opacity3={opacity3}>
                     <WorkNumber>
                         <Three>3.</Three>
                     </WorkNumber>
@@ -274,7 +269,7 @@ const MenuBar2 = ({
                     </WorkWord>
                 </Bottom3>
             </Link>
-            <Contact transition4={transition4} catdisp4={catdisp4} transitiondelay4={transitiondelay4} opacity4={opacity4}>
+            <Contact transition4={transition4} transitiondelay4={transitiondelay4} opacity4={opacity4}>
                 <Email>kmnzul@gmail.com<br/> 604-710-4926</Email>
             </Contact>
             
