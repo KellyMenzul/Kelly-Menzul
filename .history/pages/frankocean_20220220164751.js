@@ -3,14 +3,12 @@ import Head from '../comps/Head'
 import ProjectDeliverable from '../comps/ProjectDeliverable'
 import Process from '../comps/Proccess'
 import RegularButton from '../comps/RegularButton'
-import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Load2 from '../comps/Load2'
-import { motion } from 'framer-motion'
-import styles from '../styles/Home.module.css'
 import AboutMeAccordion from '../comps/AboutMeAccordion'
 import MenuBarBack from '../comps/MenuBarBack'
-import WebMenuBarBack from '../comps/WebMenuBarBack'
+
 
 const Container = styled.div`
 display:flex;
@@ -26,7 +24,7 @@ display:flex;
 flex-direction:column;
 width:100%;
 position:fixed;
-z-index:2;
+z-index:3;
 top:0px;
 `
 
@@ -50,43 +48,30 @@ const ImageHolder = styled.div`
 display:flex;
 align-items:center;
 justify-content:center;
-width:50%;
-height:40%;
-transition:2s;
-`
-
-const ImageHolder2 = styled.div `
-display:flex;
-align-items:center;
-justify-content:center;
 width:100%;
 height:40%;
 `
 
 const ImageHolderPer = styled.div`
 display:flex;
-flex-direction:column;
 align-items:center;
 justify-content:center;
-width:90%;
-height:40%;
+width:100%;
 transition:2s;
 `
 
 const ImageOne = styled.img`
 object-fit:cover;
-width:100%;
-height:80%;
+width:150%;
 `
 
 const ImageTwo = styled.img`
 object-fit:cover;
-width:150%;
+width:80%;
 `
-
 const ImageThree = styled.img`
 object-fit:cover;
-width:150%;
+width:100%;
 `
 
 const DeliverableHolder = styled.div `
@@ -94,8 +79,12 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-width:90%;
+width:100%;
 height:50vh;
+
+@media only screen and (max-width: 600px) {
+  width:90%;
+}
 `
 
 const ProcessHolder = styled.div `
@@ -123,6 +112,10 @@ margin-top:30px;
 
 const ButtonHolder2 = styled.div`
 display:flex;
+width:100%;
+height:100%;
+justify-content:center;
+align-items:center;
 flex-direction:row;
 gap:30px;
 margin-bottom:50px;
@@ -135,6 +128,7 @@ margin-bottom:50px;
 const Mindful = styled.a`
 text-decoration:underline;
 `
+
 const AccordionHolder = styled.div `
 display:none;
 width:100%;
@@ -144,7 +138,8 @@ width:100%;
 }
 `
 
-export default function Wecycle() {
+
+export default function FrankOcean() {
   const [setup1, setSetup1] =  useState(false)
 
   if (setup1 === false) {
@@ -191,68 +186,63 @@ export default function Wecycle() {
       }}
       >
         <MenuHolder>
-          <WebMenuBarBack/>
-          <MenuBarBack/>
+          <Web/>
         </MenuHolder>
         <Headholder>
-          <Head textalign='center' text='Wecycle'/>
+          <Head textalign='center' text='Frank Ocean'/>
         </Headholder>
 
         <ButtonHolder2>
           <RegularButton link='../#work' buttontext='Go Back'/>
-          <RegularButton target='_blank' link='https://wecycle-apps.vercel.app/Home' buttontext='Visit Wecycle'/>
+          <RegularButton target='_blank' link='http://www.kellymenzul.ca/frankocean/' buttontext='Visit Frank Ocean'/>
         </ButtonHolder2>
 
-        <ImageHolder2>
-          <ImageOne src='/wecycle.png'/>
-        </ImageHolder2>
+        <ImageHolder>
+          <ImageOne src='/frank.png'/>
+        </ImageHolder>
 
         <DeliverableHolder>
-          <ProjectDeliverable projecttext="Wecycle's mission is to educate their users about the importance of recycling. Wecycle wants to be the bridge between parents/teachers and children when it comes to an engaging and fun learning experience."
-          delivetext='Next.js, Storybook, Styled-Components'
-          teamtext='Kelly Menzul, Hannah Cabug, Hyerin Cheon, Leah Mah'
+          <ProjectDeliverable projecttext='This website is about Frank Ocean who is an American songwriter, it would include his music, albums, and his lyrics. It displays some of his best works and lyrics for people to see. The website is meant to give the user new music discoveries and inspiration or for fans to come and appreciate more of his art.'
+          delivetext='Wordpress'
+          teamtext='Kelly Menzul'
           />
           <AccordionHolder>
             <AboutMeAccordion 
             firsttitle='DELIVERABLES'
-            firsttext='Next.js, Storybook, Styled-Components'
+            firsttext='Wordpress'
             secondtitle='TEAM'
-            secondtext='Kelly Menzul, Hannah Cabug, Hyerin Cheon, Leah Mah'
+            secondtext='Kelly Menzul'
             />
           </AccordionHolder>
         </DeliverableHolder>
 
         <ProcessHolder>
-          <Process text="Waste management is prevelant in today's world however, children have difficulties paying attention and retaining information in school and at home."/>
+          <Process head='The Ideation' text='Create a website that is a safe space to possibly help someone who is going through tough situations and use music as a way to feel better and resonate with his lyrics.'/>
         </ProcessHolder>
 
         <ImageHolder>
-          <ImageTwo src='/wecyclepic.png'/>
+          <ImageTwo src='/frankocean.png'/>
         </ImageHolder>
 
         <ProcessHolder>
-          <Process head='The Ideation' text='Create an interactive application with visuals and components that allows children to earn badges as they complete all three waste regions.'/>
+          <Process head='The Process' text='It all started with an idea which lead to user research, prototyping, wireframing, and multiple user testings.'/>
         </ProcessHolder>
 
         <ImageHolderPer>
-        <Link href="https://www.figma.com/file/6C49WqM3rRGLIDEUOyiqna/Wecycle-StyleGuide?node-id=18%3A3">
-          <a target='_blank' className={styles.figma}>
-          <ImageThree src='/prototype.png'/>
-          </a>
-          </Link>
+          <ImageThree src='/frnakonceanfive.png'/>
         </ImageHolderPer>
 
         <ProcessHolder>
-          <Process head='The Solution' text='Design an interactive application with easy navigation. Implement fun graphics that are appealing to the target user and body texts that are not overwhelming.'/>
+          <Process head='The Solution' text='Implement a lyric analysis blog, a music room, audio throughout the website, and interactive components throughout the website.'/>
         </ProcessHolder>
 
         <ThankHolder>
-          <Head headsize='50px' textalign='center' text='Thanks for viewing Mindful!'/>
+          <Head headsize='50px' textalign='center' text='Thanks for viewing Frank Ocean!'/>
         </ThankHolder>
 
         <ButtonHolder>
           <RegularButton link='../#work' buttontext='Go Back'/>
-          <RegularButton target='_blank' link='https://idsp3380-client.herokuapp.com/' buttontext='Visit Mindful'/>
+          <RegularButton link='http://www.kellymenzul.ca/frankocean/' buttontext='Visit Frank Ocean'/>
         </ButtonHolder>
 
       </Container>

@@ -3,14 +3,12 @@ import Head from '../comps/Head'
 import ProjectDeliverable from '../comps/ProjectDeliverable'
 import Process from '../comps/Proccess'
 import RegularButton from '../comps/RegularButton'
-import Link from 'next/link'
 import { useState } from 'react'
 import Load2 from '../comps/Load2'
 import { motion } from 'framer-motion'
-import styles from '../styles/Home.module.css'
-import AboutMeAccordion from '../comps/AboutMeAccordion'
 import MenuBarBack from '../comps/MenuBarBack'
-import WebMenuBarBack from '../comps/WebMenuBarBack'
+import AboutMeAccordion from '../comps/AboutMeAccordion'
+
 
 const Container = styled.div`
 display:flex;
@@ -50,43 +48,36 @@ const ImageHolder = styled.div`
 display:flex;
 align-items:center;
 justify-content:center;
-width:50%;
+width:100%;
 height:40%;
 transition:2s;
 `
 
 const ImageHolder2 = styled.div `
 display:flex;
-align-items:center;
-justify-content:center;
 width:100%;
-height:40%;
+justify-content:center;
+align-items:center;
 `
 
 const ImageHolderPer = styled.div`
 display:flex;
-flex-direction:column;
 align-items:center;
 justify-content:center;
-width:90%;
+width:100%;
 height:40%;
+transition:0.5s;
 transition:2s;
 `
 
 const ImageOne = styled.img`
 object-fit:cover;
-width:100%;
-height:80%;
+width:150%;
 `
 
 const ImageTwo = styled.img`
 object-fit:cover;
-width:150%;
-`
-
-const ImageThree = styled.img`
-object-fit:cover;
-width:150%;
+width:50%;
 `
 
 const DeliverableHolder = styled.div `
@@ -94,8 +85,12 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-width:90%;
+width:100%;
 height:50vh;
+
+@media only screen and (max-width: 600px) {
+  width:90%;
+}
 `
 
 const ProcessHolder = styled.div `
@@ -116,6 +111,7 @@ flex-direction:row;
 height:40vh;
 gap:30px;
 margin-top:30px;
+
 @media only screen and (max-width: 600px) {
   flex-direction:column;
 }
@@ -126,14 +122,11 @@ display:flex;
 flex-direction:row;
 gap:30px;
 margin-bottom:50px;
+
 @media only screen and (max-width: 600px) {
   flex-direction:column;
   margin-top:50px;
 }
-`
-
-const Mindful = styled.a`
-text-decoration:underline;
 `
 const AccordionHolder = styled.div `
 display:none;
@@ -144,7 +137,8 @@ width:100%;
 }
 `
 
-export default function Wecycle() {
+
+export default function Tinypaws() {
   const [setup1, setSetup1] =  useState(false)
 
   if (setup1 === false) {
@@ -191,68 +185,61 @@ export default function Wecycle() {
       }}
       >
         <MenuHolder>
-          <WebMenuBarBack/>
+          <Web
           <MenuBarBack/>
         </MenuHolder>
         <Headholder>
-          <Head textalign='center' text='Wecycle'/>
+          <Head textalign='center' text='Tinypaws'/>
         </Headholder>
 
         <ButtonHolder2>
           <RegularButton link='../#work' buttontext='Go Back'/>
-          <RegularButton target='_blank' link='https://wecycle-apps.vercel.app/Home' buttontext='Visit Wecycle'/>
+          <RegularButton link='http://www.kellymenzul.ca/Tinypaws' buttontext='Visit Tinypaws'/>
         </ButtonHolder2>
 
         <ImageHolder2>
-          <ImageOne src='/wecycle.png'/>
+          <ImageOne src='/tinypaws.png'/>
         </ImageHolder2>
 
         <DeliverableHolder>
-          <ProjectDeliverable projecttext="Wecycle's mission is to educate their users about the importance of recycling. Wecycle wants to be the bridge between parents/teachers and children when it comes to an engaging and fun learning experience."
-          delivetext='Next.js, Storybook, Styled-Components'
-          teamtext='Kelly Menzul, Hannah Cabug, Hyerin Cheon, Leah Mah'
-          />
+          <ProjectDeliverable/>
           <AccordionHolder>
             <AboutMeAccordion 
             firsttitle='DELIVERABLES'
-            firsttext='Next.js, Storybook, Styled-Components'
+            firsttext='WordPress, WooCommerce'
             secondtitle='TEAM'
-            secondtext='Kelly Menzul, Hannah Cabug, Hyerin Cheon, Leah Mah'
+            secondtext='Kelly Menzul, Dawson Gosse, Joyce Chan'
             />
           </AccordionHolder>
         </DeliverableHolder>
 
         <ProcessHolder>
-          <Process text="Waste management is prevelant in today's world however, children have difficulties paying attention and retaining information in school and at home."/>
+          <Process/>
         </ProcessHolder>
 
         <ImageHolder>
-          <ImageTwo src='/wecyclepic.png'/>
+          <ImageTwo src='/tinypawspic.png'/>
         </ImageHolder>
 
         <ProcessHolder>
-          <Process head='The Ideation' text='Create an interactive application with visuals and components that allows children to earn badges as they complete all three waste regions.'/>
+          <Process head='The Ideation' text='We began researching and conducting surveys to determine the target market for Tinypaws.'/>
         </ProcessHolder>
 
         <ImageHolderPer>
-        <Link href="https://www.figma.com/file/6C49WqM3rRGLIDEUOyiqna/Wecycle-StyleGuide?node-id=18%3A3">
-          <a target='_blank' className={styles.figma}>
-          <ImageThree src='/prototype.png'/>
-          </a>
-          </Link>
+          <ImageTwo src='/tinypawspersona.png'/>
         </ImageHolderPer>
 
         <ProcessHolder>
-          <Process head='The Solution' text='Design an interactive application with easy navigation. Implement fun graphics that are appealing to the target user and body texts that are not overwhelming.'/>
+          <Process head='The Solution' text='We implemented a user profile for customers/hosts/volunteers/employees, a warm color pallette, additional cat resources, and an online shop.'/>
         </ProcessHolder>
 
         <ThankHolder>
-          <Head headsize='50px' textalign='center' text='Thanks for viewing Mindful!'/>
+          <Head headsize='50px' textalign='center' text='Thanks for viewing Tinypaws!'/>
         </ThankHolder>
 
         <ButtonHolder>
           <RegularButton link='../#work' buttontext='Go Back'/>
-          <RegularButton target='_blank' link='https://idsp3380-client.herokuapp.com/' buttontext='Visit Mindful'/>
+          <RegularButton link='http://www.kellymenzul.ca/Tinypaws' buttontext='Visit Tinypaws'/>
         </ButtonHolder>
 
       </Container>

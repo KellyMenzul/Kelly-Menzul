@@ -10,7 +10,6 @@ import { motion } from 'framer-motion'
 import styles from '../styles/Home.module.css'
 import AboutMeAccordion from '../comps/AboutMeAccordion'
 import MenuBarBack from '../comps/MenuBarBack'
-import WebMenuBarBack from '../comps/WebMenuBarBack'
 
 const Container = styled.div`
 display:flex;
@@ -191,7 +190,7 @@ export default function Wecycle() {
       }}
       >
         <MenuHolder>
-          <WebMenuBarBack/>
+          <Web
           <MenuBarBack/>
         </MenuHolder>
         <Headholder>
