@@ -1,0 +1,570 @@
+import styled from 'styled-components'
+import MenuBar from '../comps/MenuBar'
+import Name from '../comps/Name'
+import Position from '../comps/Position'
+import Intro from '../comps/Intro'
+import Head from '../comps/Head'
+import Load from '../comps/Load'
+import Role from '../comps/Role'
+import Screens from '../comps/Screens'
+import { useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import MenuBar2 from '../comps/MenuBar2'
+import AboutMeAccordion from '../comps/AboutMeAccordion'
+import ImageGallery from '../comps/ImageGallery'
+import { style } from '@mui/system'
+
+
+const Holder = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+width:100%;
+height:100%;
+flex-wrap:wrap;
+`
+
+const MenuHolder = styled.div`
+display:flex;
+flex-direction:column;
+width:100%;
+position:fixed;
+justify-content:center;
+align-items:center;
+z-index:1;
+`
+const ContentHolder = styled.div `
+display:flex;
+flex-direction:column;
+align-items:center;
+`
+
+const LandingHolder = styled.div`
+display:flex;
+flex-direction:row;
+position:relative;
+width:100%;
+height:80vh;
+padding:40px;
+
+@media only screen and (max-width: 600px) {
+  flex-direction:column;
+  padding:20px;
+  height:100vh;
+}
+
+@media only screen and (min-width : 600px){
+  flex-direction:column;
+}
+
+@media only screen and (min-width: 1024px) {
+  flex-direction:row;
+}
+
+@media only screen and (min-width: 1300px) {
+  flex-direction:row;
+}
+`
+
+const LandingHolderLeft = styled.div`
+display:flex;
+flex:2;
+flex-direction:column;
+
+@media only screen and (max-width: 600px) {
+  flex:1;
+}
+`
+
+const LandingHolderRight = styled.div`
+display:flex;
+flex:1;
+align-items:flex-start;
+justify-content:flex-end;
+@media only screen and (max-width: 600px) {
+  align-items:flex-start;
+}
+
+@media only screen and (min-width : 600px){
+  margin-top:-200px;
+}
+
+@media only screen and (min-width: 1024px) {
+  margin-top:0px;
+}
+`
+
+const NameHolder = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+width:100%;
+`
+
+const IntroHolder = styled.div`
+display:flex;
+justify-content:center;
+align-items:flex-start;
+height:100%;
+
+@media only screen and (max-width: 600px) {
+  justify-content:left;
+}
+
+@media only screen and (min-width : 600px){
+  align-items:center;
+  justify-content:left;
+}
+
+@media only screen and (min-width: 1024px) {
+  align-items:center;
+  height:70%;
+}
+`
+// About
+
+const AboutHolder = styled.div`
+display:flex;
+flex-direction:column;
+flex-wrap:wrap;
+width:100%;
+padding:20px;
+align-items:center;
+justify-content:center;
+
+@media only screen and (min-width : 600px){
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+}
+
+@media only screen and (min-width: 1025px) {
+  flex-direction:row;
+}
+
+
+`
+
+const  AboutHolderLeft = styled.div`
+flex:1;
+align-items:center;
+position:relative;
+width:100%;
+max-height:600px;
+justify-content:center;
+display:flex;
+flex-direction:column;
+margin-bottom:200px;
+z-index:-1;
+
+@media only screen and (max-width : 600px){
+  display:none;
+  width:100%;
+  
+}
+
+@media only screen and (min-device-width : 600px){
+  max-height:800px;
+  display:none;
+  position:none;
+}
+
+@media only screen and (min-width: 1025px) {
+  display:none;
+  flex-wrap:wrap;
+}
+`
+
+const HeroImage = styled.img`
+display:none;
+width:100%;
+height:100%;
+
+@media only screen and (max-width: 600px) {
+  display:flex;
+  width:100%;
+}
+
+@media only screen and (min-device-width : 600px){
+display:none;
+}
+
+@media only screen and (min-width: 1025px) {
+  display:none;
+}
+`
+
+const AboutHolderImage = styled.div `
+flex:1;
+align-items:center;
+position:relative;
+width:100%;
+max-height:600px;
+justify-content:center;
+display:none;
+flex-direction:column;
+margin-bottom:200px;
+z-index:-1;
+
+@media only screen and (max-width: 600px) {
+  display:none;
+}
+
+@media only screen and (min-device-width : 600px){
+  max-height:800px;
+  margin-bottom:50px;
+  display:flex;
+}
+
+@media only screen and (min-width: 1024px) {
+  display:none;
+}
+`
+
+const DesktopHolderImage = styled.div `
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+@media only screen and (max-width: 600px) {
+  display:none;
+}
+
+@media only screen and (min-width : 600px){
+  display:flex;
+  width:50%;
+}
+
+@media only screen and (min-width: 1024px) {
+  display:flex;
+  flex:1;
+}
+`
+
+const DesktopImage = styled.img`
+max-width:50%;
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width : 600px){
+  max-width:150%;
+}
+
+@media only screen and (min-width: 1024px) {
+  max-width:100%;
+  margin-left:0px;
+
+}
+`
+
+const AboutHolderRight = styled.div`
+display:flex;
+width:100%;
+flex-direction:column;
+flex:1;
+
+@media only screen and (min-width: 1024px) {
+  align-items:center;
+  justify-content:center;
+}
+`
+const AboutMeHolder = styled.div`
+display:flex;
+flex-direction:column;
+width:100%;
+gap:20px;
+
+@media only screen and (min-width: 1024px) {
+  width:70%;
+  align-items:left;
+  flex-wrap:wrap;
+}
+`
+
+// work
+
+const WorkHolder = styled.div `
+display:flex;
+flex-direction:column;
+width:100%;
+margin-bottom:200px;
+
+@media only screen and (max-width: 600px) {
+  flex-direction:column;
+}
+
+@media only screen and (min-width : 600px){
+  flex-direction:row;
+}
+
+@media only screen and (min-width: 1024px) {
+  flex-direction:row;
+}
+`
+const  WorkHolderLeft = styled.div`
+display:flex;
+align-items:center;
+justify-content:center;
+flex:1;
+`
+
+const  WorkHolderRight = styled.div`
+flex:1;
+display:flex;
+align-items:center;
+justify-content:center;
+`
+
+const LoadHolder = styled.div`
+position:absolute;
+z-index:-19;
+display:flex;
+width:200%;
+height:100%;
+
+@media only screen and (max-width: 600px) {
+  top:300px;
+  left:-50px;
+}
+
+@media only screen and (min-width: 1024px) {
+  left:70px;
+  top:-600px;
+}
+`
+
+const HeadHolder = styled.div `
+display:flex;
+flex-direction:column;
+width:100%;
+padding-top:40px;
+@media only screen and (max-width: 600px) {
+  display:flex;
+}
+
+@media only screen and (min-width : 600px){
+  display:none;
+}
+
+@media only screen and (min-width: 1024px) {
+  display:none;
+}
+`
+
+const FullHeadHolder = styled.div`
+display:none;
+
+@media only screen and (min-width : 600px){
+  display:block;
+}
+@media only screen and (min-width: 1024px) {
+  display:flex;;
+}
+`
+
+const TextHolder  =styled.div``
+
+const ContainerLeft = styled.div`
+display:flex;
+flex-direction:column;
+flex:1;
+width:100%;
+align-items:center;
+justify-content:center;
+`
+const ContainerRight = styled.div`
+display:flex;
+flex-direction:column;
+width:100%;
+flex:1;
+align-items:center;
+justify-content:center;
+`
+
+const AppHolder = styled.div`
+display:flex;
+width:100%;
+padding:20px;
+padding-top:60px;
+align-items:center;
+justify-content:center;
+
+@media only screen and (max-width: 600px) {
+  width:100%;
+}
+
+@media only screen and (min-width : 600px){
+  width:90%;
+}
+
+@media only screen and (min-width: 1024px) {
+  width:80%;
+}
+`
+const AccordionHolder = styled.div ``
+
+const ImageHolder = styled.div`
+display:flex;
+width:100%;
+flex-direction:row;
+align-items:center;
+justify-content:space-between;
+`
+
+const ProjectImage = styled.img `
+width:30%;
+`
+
+export default function Home() {
+  const {ref, inView} = useInView();
+  const animation = useAnimation();
+  
+
+  useEffect(()=> {
+    if(inView){
+      animation.start({
+        opacity:1,
+        transition: {
+          duration:3
+        }
+      });
+    }
+    if(!inView){
+      animation.start({opacity:0,})
+    }
+    console.log("use effect hook, inView = ", inView);
+  }, [inView]);
+
+  return (
+    <Holder>
+      <MenuHolder>
+        <MenuBar />
+        <MenuBar2/>
+      </MenuHolder>
+      <ContentHolder>
+      <LandingHolder>
+        <LandingHolderLeft>
+          <NameHolder
+                 id='landing'
+                 as={motion.div}
+                 initial="hidden" animate="visible" variants={{
+                   hidden: {
+                     opacity:0,
+                     x:-100
+           
+                   },
+                   visible: {
+                     opacity: 1,
+                     x:0,
+           
+                     transition: {
+                       duration:2,
+                     }
+                   }
+                 }}>
+            <Name/>
+            <Role/>
+          </NameHolder>
+        </LandingHolderLeft>
+        <LandingHolderRight
+               id='landing'
+               as={motion.div}
+               initial="hidden" animate="visible" variants={{
+                 hidden: {
+                   opacity:0,
+         
+                 },
+                 visible: {
+                   opacity: 1,
+         
+                   transition: {
+                     delay:1.5,
+                     duration:3,
+                   }
+                 }
+               }}
+        >
+          <IntroHolder>
+           <Intro/>
+          </IntroHolder>
+        </LandingHolderRight>
+
+        <LoadHolder
+               id='landing'
+               as={motion.div}
+               initial="hidden" animate="visible" variants={{
+                 hidden: {
+                   opacity:0,
+                   x:100
+         
+                 },
+                 visible: {
+                   opacity: 1,
+                   x:0,
+         
+                   transition: {
+                     duration:2,
+                   }
+                 }
+               }}>
+                 
+          <Load/>
+        </LoadHolder>
+      </LandingHolder>
+
+      <ImageHolder>
+        <ProjectImage src='/frankocean.png'/>
+        <ProjectImage src='/mindful.png'/>
+        <ProjectImage src='/tinypawspic.png'/>
+      </ImageHolder>
+
+      <AboutHolder id='about'>
+        <HeadHolder>
+          <Head text='Hi There!'/>
+        </HeadHolder>
+        {/* <AboutHolderImage>
+          <HeroImage src='/me2.png'/>
+        </AboutHolderImage> */}
+        <DesktopHolderImage>
+          <DesktopImage src='/me2.png'/>
+        </DesktopHolderImage>
+        <AboutHolderRight>
+            <AboutMeHolder>
+                <FullHeadHolder>
+                  <Head text='Hi there!'/>
+                </FullHeadHolder>  
+                  <Position fontsize='16px' text='My name is Kelly and I am a front-end developer and UX/UI Designer! I like to create online platforms and easy to use interface designs. My passion started when I took a digital media class in high school. From there, I developed an interest in development and design which has lead me to where I am today.'/>
+                <AccordionHolder>
+                  <AboutMeAccordion/>
+                </AccordionHolder>
+            </AboutMeHolder>
+        </AboutHolderRight>
+        <AboutHolderLeft>
+          <HeroImage src='/me2.png'/>
+        </AboutHolderLeft>
+      </AboutHolder>
+
+      {/* <RegularButton target='_blank' link='https://dribbble.com/KellyMenzul' width='300px' buttontext="View my design work"/> */}
+
+      <AppHolder id="work">
+        <Head headsize='60px' text='Here is some of my work!'/>
+      </AppHolder>
+      
+      <WorkHolder>
+        <ContainerLeft>
+            <Screens info='Front-end Development | UX/UI Design' linkhref='/mindful' name='Mindful'/>
+            <Screens info='Wordpress | UX/UI Design' linkhref='/tinypaws' src='tinypawsscreen.png' name='Tinypaws' />
+        </ContainerLeft>
+        <ContainerRight>
+            <Screens info='Front-end Development | UX/UI Design'  linkhref='/wecycle' name='Wecycle' src='wecyclescreen.png'/>
+            <Screens info='Wordpress | UX/UI Design' linkhref='/frankocean' src='frankoceanscreen.png' name='Frank Ocean'/>
+        </ContainerRight>
+      </WorkHolder>
+    </ContentHolder>
+  </Holder>
+  )
+}
